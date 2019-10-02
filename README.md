@@ -17,7 +17,7 @@ Fazemos parte do universo digital, focada em criar e desenvolver experiências i
 
 ## Desafio
 
-Faça o download do arquivo [desafio](https://www.dropbox.com/sh/x5wupfno5yqvmts/AADzmcp3hYuWbKYwqDYmmvCqa?dl=0) e após o download terminado siga as etapas listadas abaixo:
+Faça o download do arquivo [clique aqui para baixar](https://www.dropbox.com/sh/x5wupfno5yqvmts/AADzmcp3hYuWbKYwqDYmmvCqa?dl=0) e após o download terminado siga as etapas listadas abaixo:
 
 ### Etapa 1
 
@@ -28,7 +28,7 @@ Faça o download do arquivo [desafio](https://www.dropbox.com/sh/x5wupfno5yqvmts
 ### Etapa 2
 
 - Na página de listagem dos produtos, faça:
-  * Consuma os produtos da API [Link dos produtos](https://api.myjson.com/bins/9e9fl);
+  * Consuma os produtos da API [Link da API](https://api.myjson.com/bins/9e9fl);
   * Implementar o campo de pesquisa dos produtos;
   * Implementar a funcionalidade de adição de um produto ao carrinho.
 
