@@ -28,7 +28,7 @@ Faça o download do arquivo [clique aqui para baixar](https://www.dropbox.com/sh
 ### Etapa 2
 
 - Na página de listagem dos produtos, faça:
-  * Consuma os produtos da API [Link da API](https://api.myjson.com/bins/9e9fl);
+  * Consuma os produtos da API: [clique aqui para acessar a API](https://api.myjson.com/bins/9e9fl);
   * Implementar o campo de pesquisa dos produtos;
   * Implementar a funcionalidade de adição de um produto ao carrinho.
 
