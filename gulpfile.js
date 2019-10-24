@@ -5,7 +5,7 @@ var scssFiles = './src/assets/scss/style.scss';
 const assetPath = './src/assets/'
 
 gulp.task('sassdev', function () {
-  return gulp.src(assetPath + 'scss/style.scss')
+  return gulp.src(scssFiles)
       .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
       .pipe(concat('style.css'))
       .pipe(sass({outputStyle: 'expanded'}))

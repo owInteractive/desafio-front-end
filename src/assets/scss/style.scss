@@ -1,9 +1,19 @@
-$red: #f00;
+$red: #3e59ff;
 $white: #fff;
 
 .card {
   background-color: $red;
+  &__title {
+    color: $white;
+  }
 }
-.card__title {
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $red;
   color: $white;
+  text-align: center;
 }
