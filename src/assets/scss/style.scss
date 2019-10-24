@@ -1,0 +1,9 @@
+$red: #f00;
+$white: #fff;
+
+.card {
+  background-color: $red;
+}
+.card__title {
+  color: $white;
+}
