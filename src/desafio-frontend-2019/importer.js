@@ -2,7 +2,6 @@ import '@/registerServiceWorker'
 import '@/assets/css/style.css'
 import 'vue-toastr-2/dist/vue-toastr-2.min.css'
 import 'bootstrap/dist/css/bootstrap-grid.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Vue from 'vue'
 import axios from 'axios'
