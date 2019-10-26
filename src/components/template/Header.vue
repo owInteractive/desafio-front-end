@@ -1,10 +1,42 @@
 <template>
-    <div>
-        Header
+    <div class="header">
+        <div class="box">
+            <div class="container-center">
+                <p>
+                    <img alt="Vue logo" src="@/assets/logo.png">
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="container-center">
+                <router-link :to="{ name: 'products' }" tag="p" id="products">
+                    <a>Produtos</a>
+                </router-link>
+            </div>
+        </div>
+        <div class="box">
+            <div class="container-center">
+                <div class="cart">
+                    <router-link :to="{ name: 'shoppingCart' }" tag="p" id="shoppingCart">
+                        <a>
+                            <img alt="Cart" src="@/assets/imgs/icons/cart.png">
+                            <sup><p class="ellipse"><span>{{cartProducts.length}}</span></p></sup>
+                        </a>
+                    </router-link>
+                </div>
+            </div>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
     </div>
 </template>
 <script>
+  import {mapGetters} from 'vuex'
+
   export default {
     name: 'Header',
+    computed: {
+      ...mapGetters({cartProducts: 'getProductsCart'}),
+    }
   }
 </script>

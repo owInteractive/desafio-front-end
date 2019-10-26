@@ -1,19 +1,25 @@
 $red: #3e59ff;
 $white: #fff;
+$pruple: #8e36b7;
+$pruple-hover: #bd48f4;
+$gray: #bbbbbb;
+$gray-hover: #e9e9e9;
 
-.card {
-  background-color: $red;
-  &__title {
-    color: $white;
-  }
+@import "header-footer";
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('../../assets/fonts/SourceSansPro-Regular.ttf')
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: $red;
-  color: $white;
-  text-align: center;
+html {
+  font-family: "Source Sans Pro";
+  color: #434343;
+  font-size: 18px;
+  font-weight: 400;
 }
+
+body {
+  margin: 0;
+}
+

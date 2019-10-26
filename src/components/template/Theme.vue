@@ -1,7 +1,7 @@
 <template>
-    <div class="m-grid m-grid--hor m-grid--root m-page">
+    <div>
         <header-bar/>
-        <div>
+        <div class="content">
             <slot></slot>
         </div>
         <footer-bar/>
