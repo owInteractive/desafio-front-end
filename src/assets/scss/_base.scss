@@ -1,0 +1,147 @@
+.content {
+  padding: 30px;
+  min-height: 758px;
+}
+
+.btn-gray {
+  cursor: pointer;
+  width: 262px;
+  height: 54px;
+  border-radius: 3px;
+  background-color: #cfcfcf;
+  border: none;
+  color: #434343;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 400;
+
+  &:hover {
+    background-color: $gray-hover;
+  }
+}
+
+.btn-light-border:hover {
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: $pruple-hover;
+  border: none;
+  color: $white;
+}
+
+.btn-purple {
+  cursor: pointer;
+  width: 262px;
+  height: 54px;
+  border-radius: 3px;
+  background-color: $pruple;
+  border: none;
+  color: $white;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 400;
+
+  &:hover {
+    background-color: $pruple-hover;
+  }
+}
+
+.title {
+  color: #434343;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sub-title {
+  color: #8e36b7;
+  font-family: "Source Sans Pro";
+  margin-left: 35px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.text-bold {
+  color: #434343;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.text-total {
+  height: 15px;
+  color: #434343;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.text-lg-purple {
+  height: 26px;
+  color: #8e36b7;
+  font-family: "Source Sans Pro";
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.text-md-bold {
+  height: 37px;
+  color: #434343;
+  font-size: 18px;
+  font-family: "Source Sans Pro";
+  font-weight: 700;
+}
+
+// #### Number input
+
+.number-input {
+  border: 1px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input input[type=number] {
+  font-family: sans-serif;
+  max-width: 2.5rem;
+  padding: .2rem;
+  border: solid #ddd;
+  border-width: 0 1px;
+  font-size: 1rem;
+  height: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+// #### Loader ####
+.loader {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid $pruple;
+  border-bottom: 4px solid $pruple;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
