@@ -12,7 +12,8 @@ import VueToastr2 from 'vue-toastr-2'
 import BootstrapVue from 'bootstrap-vue'
 import VueTheMask from 'vue-the-mask'
 import VueSweetalert2 from 'vue-sweetalert2'
-import {ValidationProvider} from 'vee-validate';
+import {ValidationProvider, ValidationObserver} from 'vee-validate';
+
 import br from 'vee-validate/dist/locale/pt_BR'
 import VueEvents from 'vue-events'
 import BlockUI from 'vue-blockui'
@@ -46,6 +47,7 @@ const toastrConfigs = {
 window.toastr = require('toastr')
 
 Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
 Vue.component('Theme', Theme)
 Vue.use(VueAxios, axios)
 Vue.use(VueToastr2, toastrConfigs)

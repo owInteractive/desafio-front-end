@@ -1,7 +1,6 @@
 <template>
     <div>
-        <form data-vv-scope="form-1" class="flex-container"
-              @submit.prevent="completePurchase()" autocomplete="disabled">
+        <ValidationObserver ref="provider" v-slot="{ invalid }" tag="form" @submit.prevent="completePurchase()">
             <div class="container-flex">
                 <div class="box-container">
                     <div class="form-group">
@@ -12,7 +11,7 @@
                         </ValidationProvider>
                     </div>
                     <div class="form-group">
-                        <ValidationProvider rules="email" name="E-mail" v-slot="{ errors }">
+                        <ValidationProvider rules="email|required" name="E-mail" v-slot="{ errors }">
                             <label class="label-form">E-mail*</label>
                             <input class="input-text" v-model="user.email" type="text">
                             <span class="error">{{ errors[0] }}</span>
@@ -30,7 +29,8 @@
                     </div>
 
                     <div class="form-group">
-                        <ValidationProvider rules="required|min:8" name="Data de Nascimento" v-slot="{ errors }">
+                        <ValidationProvider rules="required|min:8" name="Data de Nascimento"
+                                            v-slot="{ errors }">
                             <label class="label-form">Data de Nascimento*</label>
                             <the-mask class="input-text"
                                       placeholder="dd/mm/yyyy"
@@ -40,7 +40,8 @@
                             <span class="error">{{ errors[0] }}</span>
                         </ValidationProvider>
 
-                        <ValidationProvider rules="required|min:10" name="Data de Nascimento" v-slot="{ errors }">
+                        <ValidationProvider rules="required|min:10" name="Telefone"
+                                            v-slot="{ errors }">
                             <label class="label-form">Telefone*</label>
                             <the-mask class="input-text"
                                       required v-model="user.telephone" autocomplete="disabled"
@@ -89,9 +90,10 @@
                         </ValidationProvider>
                     </div>
                     <div class="form-group">
-                        <ValidationProvider name="Cidade" v-slot="{ errors }">
+                        <ValidationProvider name="Cidade" rules="required" v-slot="{ errors }">
                             <label class="label-form">Cidade*</label>
                             <input class="input-text" v-model="address.city" type="text" autocomplete="disabled">
+                            <span class="error">{{ errors[0] }}</span>
                         </ValidationProvider>
 
                         <ValidationProvider rules="required" name="Estado" v-slot="{ errors }">
@@ -102,12 +104,12 @@
                     </div>
                     <div class="form-group" style="float: right">
                         <span>
-                            <button type="submit" class="btn-purple">Concluir compra</button>
+                            <button class="btn-purple">Concluir compra</button>
                         </span>
                     </div>
                 </div>
             </div>
-        </form>
+        </ValidationObserver>
     </div>
 </template>
 <script>
@@ -137,7 +139,18 @@
       }
     },
     methods: {
-      completePurchase () {
+      async completePurchase () {
+        const isValid = await this.$refs.provider.validate();
+        if (!isValid) {
+          this.$swal('', 'Confira os campos.', 'error')
+          return false
+        }
+        this.$swal({
+          title: 'Seu cadastro foi solicitado com sucesso!',
+          type: 'success',
+          footer: '<a href="/"><-- VOLTAR PARA HOME</a>'
+        })
+
       },
       validateZip () {
         let self = this
