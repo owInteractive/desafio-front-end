@@ -1,0 +1,45 @@
+.text-product {
+  color: #434343;
+  font-family: "Source Sans Pro";
+  margin: 15px 25px 0px 25px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.text-description {
+  font-family: "Source Sans Pro";
+  margin: 15px 25px 0px 25px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text-price-product {
+  font-family: "Source Sans Pro";
+  margin: 30px 25px 30px 25px;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.box-product {
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.29);
+  }
+}
+
+.bg-img {
+  min-height: 200px;
+  background-color: #e0e0e0
+}
+
+.sub-title-product {
+  color: #8e36b7;
+  font-family: "Source Sans Pro";
+  margin: 15px 25px 0px 25px;
+  font-size: 14px;
+  font-weight: 700;
+}

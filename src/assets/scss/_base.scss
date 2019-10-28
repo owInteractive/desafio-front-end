@@ -47,6 +47,25 @@
   }
 }
 
+.btn-light {
+  cursor: pointer;
+  background-color: $white;
+  color: $pruple;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #aaaaaa;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 700;
+  padding: 15px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $pruple;
+    color: $white;
+  }
+}
+
 .title {
   color: #434343;
   font-family: "Source Sans Pro";

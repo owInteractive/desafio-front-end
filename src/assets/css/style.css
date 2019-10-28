@@ -47,6 +47,25 @@
   background-color: #bd48f4;
 }
 
+.btn-light {
+  cursor: pointer;
+  background-color: #fff;
+  color: #8e36b7;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #aaaaaa;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 700;
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+.btn-light:hover {
+  background-color: #8e36b7;
+  color: #fff;
+}
+
 .title {
   color: #434343;
   font-family: "Source Sans Pro";
@@ -197,6 +216,52 @@
   flex-grow: 1;
 }
 
+.text-product {
+  color: #434343;
+  font-family: "Source Sans Pro";
+  margin: 15px 25px 0px 25px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.text-description {
+  font-family: "Source Sans Pro";
+  margin: 15px 25px 0px 25px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text-price-product {
+  font-family: "Source Sans Pro";
+  margin: 30px 25px 30px 25px;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.box-product {
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.box-product:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.29);
+}
+
+.bg-img {
+  min-height: 200px;
+  background-color: #e0e0e0;
+}
+
+.sub-title-product {
+  color: #8e36b7;
+  font-family: "Source Sans Pro";
+  margin: 15px 25px 0px 25px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .main-content {
     padding: 20px 8px;
@@ -270,12 +335,6 @@
   text-align: left;
 }
 
-button {
-  padding: 5px 15px;
-  margin: 5px;
-  min-width: 100px;
-}
-
 @media (max-width: 768px) {
   .form-group {
     flex-direction: column;
@@ -343,6 +402,10 @@ html {
 
 body {
   margin: 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 .clear-cart {
@@ -474,4 +537,16 @@ body {
   color: red;
   font-size: 12px;
   padding-top: 5px;
+}
+
+.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex-list > div {
+  flex: 1 1 300px;
+  margin: 10px;
 }
