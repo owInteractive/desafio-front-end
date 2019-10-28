@@ -29,43 +29,49 @@
   padding: 40px;
 }
 
-.box-container {
-  //margin: 0px;
-}
-
-.form-group span {
-  width: 100%;
-  margin-right: 15px;
-  padding-top: 10px;
-}
-
 .form-group {
   display: flex;
   flex-direction: row;
-}
 
-.form-group label {
-  flex: none;
-  display: block;
-  width: 300px;
-  font-weight: bold;
-  font-size: 1em;
-}
+  span {
+    width: 100%;
+    margin-right: 15px;
+    padding-top: 10px;
+  }
 
-.form-group label.right-inline {
-  text-align: right;
-  padding-right: 8px;
-  padding-left: 10px;
-  width: auto;
-}
+  label {
+    flex: none;
+    display: block;
+    width: 300px;
+    font-weight: bold;
+    font-size: 1em;
 
-.form-group .input-control {
-  flex: 1 1 auto;
-  display: block;
-  margin-bottom: 10px;
-  margin-right: 8px;
-  padding: 4px;
-  margin-top: -4px;
+    &.right-inline {
+      text-align: right;
+      padding-right: 8px;
+      padding-left: 10px;
+      width: auto;
+    }
+  }
+
+  button {
+    border: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #8e36b7;
+  }
+
+  img {
+    margin: 10px;
+  }
+
+  &.input-control {
+    flex: 1 1 auto;
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 8px;
+    padding: 4px;
+    margin-top: -4px;
+  }
 }
 
 .label-form {

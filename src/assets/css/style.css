@@ -262,6 +262,22 @@
   font-weight: 700;
 }
 
+.box-search {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.text-search {
+  text-align: center;
+  color: #909090;
+  font-family: "Source Sans Pro";
+  font-size: 20px;
+  font-weight: 700;
+  height: 40px;
+  line-height: 40px;
+}
+
 @media (max-width: 768px) {
   .main-content {
     padding: 20px 8px;
@@ -291,15 +307,15 @@
   padding: 40px;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: row;
+}
+
 .form-group span {
   width: 100%;
   margin-right: 15px;
   padding-top: 10px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: row;
 }
 
 .form-group label {
@@ -317,7 +333,17 @@
   width: auto;
 }
 
-.form-group .input-control {
+.form-group button {
+  border: none;
+  border-radius: 0 3px 3px 0;
+  background-color: #8e36b7;
+}
+
+.form-group img {
+  margin: 10px;
+}
+
+.form-group.input-control {
   flex: 1 1 auto;
   display: block;
   margin-bottom: 10px;
@@ -549,4 +575,23 @@ img {
 .flex-list > div {
   flex: 1 1 300px;
   margin: 10px;
+}
+
+.flex-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.flex-search > div {
+  flex-grow: 1;
+  flex-basis: 100px;
+  margin: 10px;
+}
+
+.flex-search > div:nth-child(2) {
+  flex-grow: 3;
 }

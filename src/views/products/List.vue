@@ -1,19 +1,20 @@
 <template>
     <div>
-        <p>lista de produtos</p>
-        <p>Lista cart</p>
-        <div class="form-group m-form__group mt-4">
-            <div class="m-input-icon m-input-icon--left m-input-icon--right">
-                <input type="text" @input="filter = $event.target.value"
-                       name="search" id="search" autocomplete="off"
-                       class="form-control m-input m-input--pill m-input--air"
-                       placeholder="Pesquisar">
-                <span class="m-input-icon__icon m-input-icon__icon--left">
-                                <span>
-                                    <i class="la la-search"></i>
-                                </span>
-                            </span>
-            </div>
+        <div style="margin: 40px 0px 40px 0px">
+            <section class="flex-search box-search">
+                <div class="text-search">
+                    Encontre seu produto
+                </div>
+                <div class="form-group">
+                    <input type="text" @input="filter = $event.target.value"
+                           name="search" id="search" autocomplete="off"
+                           class="input-text"
+                           placeholder="Pesquisar...">
+                    <button type="submit">
+                        <img src="@/assets/icons/magnifying-glass.svg" width="25" height="25">
+                    </button>
+                </div>
+            </section>
         </div>
         <list-products :products="productsFiltered"/>
     </div>

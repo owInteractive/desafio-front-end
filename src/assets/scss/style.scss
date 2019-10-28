@@ -176,3 +176,22 @@ img {
   flex: 1 1 300px;
   margin: 10px;
 }
+
+.flex-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.flex-search > div {
+  flex-grow: 1;
+  flex-basis: 100px;
+  margin: 10px;
+}
+
+.flex-search > div:nth-child(2) {
+  flex-grow: 3;
+}
