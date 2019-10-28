@@ -23,7 +23,7 @@
                            class="input-text"
                            placeholder="Pesquisar...">
                     <button type="submit">
-                        <img src="@/assets/icons/magnifying-glass.svg" width="25" height="25">
+                        <img src="/img/icons/magnifying-glass.svg" width="25" height="25">
                     </button>
                 </div>
             </section>

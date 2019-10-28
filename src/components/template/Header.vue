@@ -19,7 +19,7 @@
                 <div class="cart">
                     <router-link :to="{ name: 'shoppingCart' }" tag="p" id="shoppingCart">
                         <a>
-                            <img alt="Cart" src="@/assets/imgs/icons/cart.png">
+                            <img alt="Cart" src="/img/icons/shopping-cart.svg" width="30" height="30">
                             <sup><p class="ellipse"><span>{{cartProducts.length}}</span></p></sup>
                         </a>
                     </router-link>

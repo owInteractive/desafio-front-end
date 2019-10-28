@@ -12,7 +12,7 @@
                 <b-col>
                     <p class="sub-title" align="left">Eletrônicos</p>
                     <img @click="removeProductCart(index)" class="garbage" alt="garbage" title="Remover do carrinho"
-                         src="@/assets/icons/garbage.svg">
+                         src="/img/icons/garbage.svg">
                     <p class="text-bold" align="left">{{product.name.substring(0,50)}}</p>
                 </b-col>
                 <b-col>
@@ -68,7 +68,7 @@
                 <div class="btn-light-border" @click="clearCart">
                     <div class="float-content">
                         <img class="garbage" alt="garbage" title="Remover do carrinho"
-                             src="@/assets/icons/garbage.svg">
+                             src="/img/icons/garbage.svg">
                     </div>
                     <div class="float-content">
                         Limpar Carrinho
