@@ -1,0 +1,59 @@
+.footer-template {
+  background-color: $gray;
+  width: 100%;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+// #### HEADER ####
+.header {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+
+  p a:hover {
+    color: $purple;
+  }
+
+  p a {
+    width: 64px;
+    height: 12px;
+    color: #909090;
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .cart {
+    p a {
+      width: 5px;
+      height: 6px;
+      color: blue;
+      font-family: Gotham;
+      font-size: 8px;
+      font-weight: 700;
+    }
+  }
+}
+
+// #### box Header
+.box {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 90px;
+  width: 20%;
+  height: 60px;
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+.box:nth-child(1) {
+  flex-grow: 1;
+}

@@ -1,0 +1,275 @@
+$red: #3e59ff;
+$white: #fff;
+$purple: #8e36b7;
+$purple-hover: #bd48f4;
+$gray: #bbbbbb;
+$gray-hover: #e9e9e9;
+
+@import "base";
+@import "header-footer";
+@import "products";
+@import "form";
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('../../assets/fonts/SourceSansPro-Regular.ttf')
+}
+
+@font-face {
+  font-family: "Source Sans Pro - Black";
+  src: url('../../assets/fonts/SourceSansPro-Black.ttf')
+}
+
+html {
+  font-family: "Source Sans Pro";
+  color: #434343;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.clear-cart {
+  width: 118px;
+  height: 17px;
+  color: #434343;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.ellipse {
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: #ed1c24;
+  margin-top: 14px !important;
+  margin-left: 22px !important;
+
+  span {
+    color: $white;
+    height: 15px;
+    line-height: 15px;
+    font-family: Gotham;
+    font-size: 8px;
+    font-weight: 700;
+  }
+}
+
+.garbage {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  padding: 3px;
+  float: left;
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 10px;
+    background-color: $purple-hover;
+  }
+}
+
+.float-content {
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  margin: 5px;
+  padding: 3px;
+}
+
+.row-btns {
+  width: 100%;
+  height: auto;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+// #### box row btns
+.box-row-btns {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 230px;
+  width: 1%;
+  height: 60px;
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+.box-row-btns:nth-child(1) {
+  flex-grow: 1;
+}
+
+.container-center {
+  height: 60px;
+  position: relative;
+}
+
+.container-center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1200px) {
+  .box {
+    width: 40%;
+  }
+  .box-row-btns {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .box {
+    width: 90%;
+  }
+  .box-row-btns {
+    width: 40%;
+  }
+}
+
+// #### Bootstrap Grid ####
+.container {
+  .row {
+    margin: 10px;
+    padding-bottom: 15px;
+    border-bottom: solid 1px #aaaaaa;
+
+    .tab-center-45 {
+      padding: 45px 0;
+      text-align: center;
+    }
+
+    .tab-center-25 {
+      padding: 20px 0;
+      text-align: center;
+    }
+  }
+
+  .no-border {
+    border-bottom: none !important;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex-list > div {
+  flex: 1 1 300px;
+  margin: 10px;
+}
+
+.flex-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.flex-search > div {
+  flex-grow: 1;
+  flex-basis: 100px;
+  margin: 10px;
+}
+
+.flex-search > div:nth-child(2) {
+  flex-grow: 3;
+}
+
+.carousel-box {
+  padding: 120px;
+}
+
+.v-carousel-dots {
+  position: relative !important;
+  margin-top: 30px;
+}
+
+.v-carousel-dot {
+  background: $white !important;
+  border: 3px solid $gray;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 5px !important;
+  border-radius: 15px !important;
+
+  &.active {
+    background: $white !important;
+    border: 3px solid $purple;
+
+    &::content {
+      content: '.';
+    }
+  }
+}
+
+.v-carousel-item {
+  width: 100%;
+  //min-height: 400px;
+  background-color: #a5d3cf;
+  background-image: linear-gradient(62deg, #8e36b7 0%, #d794f6 100%);
+}
+
+.v-carousel-nav {
+  &.prev {
+    display: none;
+  }
+
+  &.next {
+    display: none;
+  }
+}
+
+.title-carousel {
+  color: #ffffff;
+  font-family: "Source Sans Pro - Black";
+  font-size: 72px;
+  font-weight: 400;
+}
+
+.text-carousel {
+  color: #ffffff;
+  font-family: "Source Sans Pro - Black";
+  font-size: 36px;
+  font-weight: 400;
+}
+
+div.container-carrousel {
+  height: 4em;
+  position: relative
+}
+
+div.container-carrousel p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}

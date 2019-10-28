@@ -1,0 +1,137 @@
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 8px;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex > div {
+  flex: 1 1 400px;
+  margin: 10px;
+}
+
+
+.container-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+
+  span {
+    width: 100%;
+    margin-right: 15px;
+    padding-top: 10px;
+  }
+
+  label {
+    flex: none;
+    display: block;
+    width: 300px;
+    font-weight: bold;
+    font-size: 1em;
+
+    &.right-inline {
+      text-align: right;
+      padding-right: 8px;
+      padding-left: 10px;
+      width: auto;
+    }
+  }
+
+  button {
+    border: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #8e36b7;
+  }
+
+  img {
+    margin: 10px;
+  }
+
+  &.input-control {
+    flex: 1 1 auto;
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 8px;
+    padding: 4px;
+    margin-top: -4px;
+  }
+}
+
+.label-form {
+  color: #434343;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    flex-direction: column;
+  }
+  .form-group .input-control {
+    margin-top: 2px;
+  }
+  .form-group label.right-inline {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+:root {
+  --transitionDuration: 300ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.input-text {
+  display: block;
+  padding: 12px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: inherit;
+  border-radius: 3px;
+  border: 1px solid #909090;
+  transition: box-shadow var(--transitionDuration);
+}
+
+.input-text::placeholder {
+  color: #cfcfcf;
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.input-text:focus {
+  outline: none;
+  box-shadow: 0.1rem 0.4rem 0.9rem $purple;
+}
+
+.input-text:placeholder-shown + .Input-label {
+  visibility: hidden;
+  z-index: -1;
+}
