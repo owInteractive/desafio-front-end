@@ -1,0 +1,16 @@
+{
+  "name": "Desafio Front-End",
+  "short_name": "Desafio",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "143x25",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#8e36b7",
+  "theme_color": "#8e36b7"
+}
