@@ -1,6 +1,18 @@
 <template>
     <div>
-        <div style="margin: 40px 0px 40px 0px">
+        <carousel :auto="auto" :watch-items="list">
+            <carousel-item :key="index" v-for="(item, index) in list">
+                <div class="carousel-box">
+                    <div class=container-carrousel>
+                        <p class="title-carousel">{{item.title}}</p>
+                    </div>
+                    <div class=container-carrousel>
+                        <p class="text-carousel">{{item.text}}</p>
+                    </div>
+                </div>
+            </carousel-item>
+        </carousel>
+        <div class="m-b-t-lg">
             <section class="flex-search box-search">
                 <div class="text-search">
                     Encontre seu produto
@@ -22,15 +34,27 @@
 <script>
   import ProductService from "@/services/ProductService"
   import ListProducts from "@/components/products/List"
+  import {Carousel, CarouselItem} from 'vue-l-carousel'
   import {mapActions, mapGetters} from 'vuex'
 
   export default {
     name: 'ProductList',
-    components: {ListProducts},
+    components: {ListProducts, Carousel, CarouselItem},
     data () {
       return {
         productsList: [],
-        filter: ''
+        filter: '',
+        auto: 30000000,
+        list: [
+          {
+            title: 'NootBooks',
+            text: 'As melhores ofertas',
+          },
+          {
+            title: 'Eletrônicos',
+            text: 'As melhores ofertas',
+          },
+        ]
       }
     },
     mounted () {

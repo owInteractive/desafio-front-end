@@ -3,6 +3,10 @@
   min-height: 758px;
 }
 
+.m-b-t-lg {
+  margin: 40px 0px 40px 0px;
+}
+
 .btn-gray {
   cursor: pointer;
   width: 262px;
@@ -166,6 +170,7 @@
   background-color: #bbbbbb;
   width: 100%;
   padding: 30px;
+  margin-top: 30px;
 }
 
 .header {
@@ -419,6 +424,11 @@
   src: url("../../assets/fonts/SourceSansPro-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Source Sans Pro - Black";
+  src: url("../../assets/fonts/SourceSansPro-Black.ttf");
+}
+
 html {
   font-family: "Source Sans Pro";
   color: #434343;
@@ -594,4 +604,73 @@ img {
 
 .flex-search > div:nth-child(2) {
   flex-grow: 3;
+}
+
+.carousel-box {
+  padding: 120px;
+}
+
+.v-carousel-dots {
+  position: relative !important;
+  margin-top: 30px;
+}
+
+.v-carousel-dot {
+  background: #fff !important;
+  border: 3px solid #bbbbbb;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 5px !important;
+  border-radius: 15px !important;
+}
+
+.v-carousel-dot.active {
+  background: #fff !important;
+  border: 3px solid #8e36b7;
+}
+
+.v-carousel-dot.active::content {
+  content: '.';
+}
+
+.v-carousel-item {
+  width: 100%;
+  background-color: #a5d3cf;
+  background-image: linear-gradient(62deg, #8e36b7 0%, #d794f6 100%);
+}
+
+.v-carousel-nav.prev {
+  display: none;
+}
+
+.v-carousel-nav.next {
+  display: none;
+}
+
+.title-carousel {
+  color: #ffffff;
+  font-family: "Source Sans Pro - Black";
+  font-size: 72px;
+  font-weight: 400;
+}
+
+.text-carousel {
+  color: #ffffff;
+  font-family: "Source Sans Pro - Black";
+  font-size: 36px;
+  font-weight: 400;
+}
+
+div.container-carrousel {
+  height: 4em;
+  position: relative;
+}
+
+div.container-carrousel p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }

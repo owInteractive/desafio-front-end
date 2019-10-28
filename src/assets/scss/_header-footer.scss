@@ -2,6 +2,7 @@
   background-color: $gray;
   width: 100%;
   padding: 30px;
+  margin-top: 30px;
 }
 
 // #### HEADER ####
@@ -17,7 +18,7 @@
   flex-flow: wrap;
 
   p a:hover {
-    color: $pruple;
+    color: $purple;
   }
 
   p a {
