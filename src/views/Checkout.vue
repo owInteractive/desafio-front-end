@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="content">
         <ValidationObserver ref="provider" v-slot="{ invalid }" tag="form" @submit.prevent="completePurchase()">
             <div class="container-flex">
                 <div class="box-container">

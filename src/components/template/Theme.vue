@@ -1,7 +1,7 @@
 <template>
     <div>
         <header-bar/>
-        <div class="content">
+        <div>
             <slot></slot>
         </div>
         <footer-bar/>

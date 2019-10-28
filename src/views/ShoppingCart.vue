@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="content">
         <b-container class="bv-example-row">
             <b-row>
                 <b-col cols="3 title">PRODUTOS</b-col>
