@@ -3,6 +3,7 @@ import '@/assets/css/style.css'
 import 'vue-toastr-2/dist/vue-toastr-2.min.css'
 import 'bootstrap/dist/css/bootstrap-grid.css'
 import 'sweetalert2/dist/sweetalert2.min.css';
+import 'vue-l-carousel/dist/main.css'
 
 import Vue from 'vue'
 import axios from 'axios'
