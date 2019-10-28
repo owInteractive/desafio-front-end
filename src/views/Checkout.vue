@@ -161,7 +161,6 @@
             self.$events.emit('DisplayBlockUI', false)
             self.address = {}
             if (response.data.erro) {
-              self.$refs.zip.$el.focus()
               self.naoLocalizado = true
               self.$swal('', 'Informe um CEP válido.', 'error')
               return
@@ -173,7 +172,6 @@
             self.address.district = response.data.bairro
             self.address.city = response.data.localidade
             self.address.state = response.data.uf
-            self.$refs.street.$el.focus()
           }).catch(() => {
             self.$events.emit('DisplayBlockUI', false)
           })
