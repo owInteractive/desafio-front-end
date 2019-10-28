@@ -2,9 +2,9 @@
     <div class="header">
         <div class="box">
             <div class="container-center">
-                <p>
-                    <img alt="Vue logo" src="@/assets/logo.png">
-                </p>
+                <router-link :to="{ name: 'home' }" tag="p" id="logo">
+                    <img alt="Vue logo" class="img-fluid" src="@/assets/logo.png">
+                </router-link>
             </div>
         </div>
         <div class="box">
