@@ -1,0 +1,30 @@
+$primary-color: #8e36b7;
+$secondary-color: #bbbbbb;
+$text-color: #909090;
+$text-bold: #434343;
+$alert: #ed1c24;
+
+@import './template/_templatebody.scss';
+@import './template/_header.scss';
+@import './template/_footer.scss';
+@import './components/_banner.scss';
+@import './components/product.scss';
+@import './components/productList.scss';
+@import './components/modal.scss';
+@import './views/shoppingcart';
+@import './views/checkout';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

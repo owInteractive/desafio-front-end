@@ -1,0 +1,15 @@
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $secondary-color;
+  height: 92px;
+  grid-area: footer;
+
+  span {
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: #666;
+    text-align: center;
+  }
+}

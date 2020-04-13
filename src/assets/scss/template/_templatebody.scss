@@ -1,0 +1,10 @@
+#template-body {
+  display: grid;
+  grid-template-columns: 2fr 12fr 2fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    'header header header'
+    'home  home  home'
+    's-cart s-cart s-cart'
+    'footer footer footer';
+}

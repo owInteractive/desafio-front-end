@@ -1,0 +1,70 @@
+#header {
+  height: 80px;
+  grid-area: header;
+  display: inline-grid;
+  grid-template-columns: 2fr 12fr 2fr;
+  grid-template-rows: auto;
+  grid-template-areas: '. hdcontent .';
+  box-shadow: 1px 1px 13px 0px rgba(150, 150, 150, 1);
+
+  .hdcontent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: hdcontent;
+    .logo {
+      flex-direction: row;
+      font-size: 1.3em;
+      .logo-mkt {
+        color: $text-color;
+      }
+      .logo-place {
+        color: $primary-color;
+      }
+    }
+
+    .hdcart {
+      display: flex;
+      align-items: center;
+      .product {
+        text-decoration: none;
+        font-size: 0.9em;
+        margin-right: 30px;
+        color: $text-color;
+        font-weight: bold;
+      }
+      .shop {
+        text-decoration: none;
+        display: flex;
+      }
+      img {
+        width: 28px;
+      }
+      .quantidade {
+        font-size: 0.6em;
+        font-weight: bold;
+        background: $alert;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        color: #fff;
+        line-height: 14px;
+        text-align: center;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 767.98px) {
+  #header {
+    width: 100%;
+    display: flex;
+
+    .hdcontent {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0 5% 0 5%;
+    }
+  }
+}
