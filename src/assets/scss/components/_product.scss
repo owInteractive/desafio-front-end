@@ -1,0 +1,71 @@
+#product {
+  width: 100%;
+  display: flex;
+
+  .card-product {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 3px;
+    margin-bottom: 60px;
+    box-shadow: 1px 1px 13px 0px rgba(150, 150, 150, 1);
+
+    &:hover {
+      box-shadow: 0 0 20px $secondary-color;
+    }
+
+    .product-photo {
+      max-width: 360px;
+      align-self: center;
+      height: 251px;
+      border: transparent;
+      display: flex;
+      align-items: center;
+      margin: 35px;
+    }
+
+    .card-body {
+      display: flex;
+      height: 209px;
+      flex-direction: column;
+      padding: 0 63px 35px 32px;
+
+      span {
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 0.9em;
+      }
+      .card-title {
+        color: $text-bold;
+        margin: 12px 0 10px 0;
+      }
+      .card-text {
+        color: $text-color;
+        font-weight: 600;
+        font-size: 1em;
+        text-align: left;
+        margin-bottom: 28px;
+      }
+      .price {
+        color: $text-bold;
+        font-size: 1.3em;
+      }
+    }
+    .btn {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.1em;
+      border-top: 1px solid $text-color;
+      padding: 20px 70px 20px 70px;
+      color: $primary-color;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: $primary-color;
+      color: #fff;
+    }
+  }
+}
