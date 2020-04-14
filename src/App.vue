@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import TemplateBody from "@/components/TemplateBody";
+import TemplateBody from '@/components/TemplateBody';
 export default {
   name: 'App',
   components: {

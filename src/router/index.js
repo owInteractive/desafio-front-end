@@ -1,17 +1,17 @@
 import Vue from 'vue';
-import Router from 'vue-router';
+import VueRouter from 'vue-router';
 
-import Home from '@/views/Home';
+import Produto from '@/views/Produto';
 import Carrinho from '@/views/Carrinho';
 import Checkout from '@/views/Checkout';
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
 const routes = [
   {
-    name: 'home',
+    name: 'produto',
     path: '/',
-    component: Home
+    component: Produto
   },
   {
     name: 'carrinho',
@@ -25,7 +25,7 @@ const routes = [
   }
 ];
 
-const router = new Router({
+const router = new VueRouter({
   history: true,
   mode: 'history',
   linkExactActiveClass: 'active',

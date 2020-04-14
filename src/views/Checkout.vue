@@ -92,38 +92,31 @@
 </template>
 
 <script>
-  import Modal from '@/components/Modal.vue';
-  const axios = require('axios');
-  export default{
-      name: 'checkout',
-      data() {
-        return {
-          cep: '',
-          address: {},
-          bairro: '',
-          rua: '',
-          complemento: '',
-          cidade: '',
-          estado: '',
-
-        }
-      },
-      methods: {
-        postCep() {
-          axios.get(`https://viacep.com.br/ws/${this.cep}/json/`).then(response => {
-            let address = response.data;
-            this.bairro = address.bairro;
-            this.rua = address.logradouro;
-            this.complemento = address.complemento;
-            this.cidade = address.localidade;
-            this.estado = address.uf;
-          })
-          .catch(error => {
-          })
-        }
-    
-      },
+import cepApi from '@/services/cepApi';
+import Modal from '@/components/Modal';
+export default {
+  name: 'Checkout',
+  components: {
+    Modal
+  },
+  data() {
+    return {
+      showModal: false,
+      cep: ' ',
+      address: {}
+    };
+  },
+  methods: {
+    searchCep() {
+      let self = this;
+      if (/^[0-9]{5}-[0-9]{3}$/.test(this.cep)) {
+        cepApi.cepValidation(this.cep).then(response => {
+          self.address = response.data;
+        });
+      }
+    }
   }
+};
 </script>
 
 

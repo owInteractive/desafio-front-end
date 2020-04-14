@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const productsData = axios.create({
-  baseURL: 'https://api.myjson.com/bins/9e9fl'
-});
+// export const productsData = axios.create({
+// baseURL: 'http://localhost:3000/produtos'
+// });
 
 export const cepApi = axios.create({
   baseURL: 'https://viacep.com.br/ws/'

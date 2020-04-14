@@ -8,11 +8,11 @@ $alert: #ed1c24;
 @import './template/_header.scss';
 @import './template/_footer.scss';
 @import './components/_banner.scss';
-@import './components/product.scss';
-@import './components/productList.scss';
-@import './components/modal.scss';
-@import './views/shoppingcart';
-@import './views/checkout';
+@import './components/_product.scss';
+@import './components/_productList.scss';
+@import './components/_modal.scss';
+@import './views/_shoppingcart';
+@import './views/_checkout';
 
 * {
   margin: 0;

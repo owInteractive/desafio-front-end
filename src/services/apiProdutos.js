@@ -1,7 +1,7 @@
-import { productsData } from './config';
+/*import { productsData } from './config';
 
 export default {
   get() {
     return productsData.get('');
   }
-};
+}; */

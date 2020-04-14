@@ -33,6 +33,13 @@
         color: $text-color;
         font-weight: bold;
       }
+      .carrinho {
+        background-color: #e31424 !important;
+        border-radius: 50%;
+        color: #fff;
+        width: 25px; 
+        font-family: "SourceSansPro-Black"; 
+      }
       .shop {
         text-decoration: none;
         display: flex;

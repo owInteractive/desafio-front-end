@@ -1,11 +1,12 @@
 #product {
   width: 100%;
-  display: flex;
+  display: block;
+  grid-area: product;
 
   .card-product {
     width: 100%;
     background: #fff;
-    display: flex;
+    display: block;
     flex-direction: column;
     margin: 3px;
     margin-bottom: 60px;
@@ -20,13 +21,13 @@
       align-self: center;
       height: 251px;
       border: transparent;
-      display: flex;
+      display: block;
       align-items: center;
       margin: 35px;
     }
 
     .card-body {
-      display: flex;
+      display: block;
       height: 209px;
       flex-direction: column;
       padding: 0 63px 35px 32px;

@@ -56,11 +56,11 @@
               <div class="col-b-total">
                 <span>
                   <strong>
-                    {{ (parseFloat(item.price) * item.quantity) | currency }}
+                    {{ (parseFloat(item.preco) * item.quantity) | currency }}
                   </strong>
                   à vista ou 10x
                   {{
-                    ((parseFloat(item.price) * item.quantity) / 0.1) | currency
+                    ((parseFloat(item.preco) * item.quantity) / 0.1) | currency
                   }}
                 </span>
               </div>
@@ -80,7 +80,7 @@
             <span class="pay-type">Total Parcelado</span>
             <div class="pay-info">
               em até
-              <strong>10x {{ (totalPrice / 0.01) | currency }}</strong>
+              <strong>10x {{ (totalPrice / 0.1) | currency }}</strong>
               <br />(Total {{ totalPrice | currency }})
             </div>
           </div>

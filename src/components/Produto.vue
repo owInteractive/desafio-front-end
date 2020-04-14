@@ -1,17 +1,17 @@
 <template>
   <div id="product">
     <div class="card-product">
-      <img :src="product.picture" class="product-photo" alt="Foto do produto" />
+      <img :src="produtos.imagem" class="product-photo" alt="Product Photo" />
       <div class="card-body">
         <span>Eletrônicos</span>
-        <strong class="card-title">{{ product.name.substring(0, 30) }}</strong>
+        <strong class="card-title">{{ produtos.titulo.substring(0, 30) }}</strong>
         <p class="card-text">
           Lorem ipsum dolor sit amet, cons ctetur adipiscing elit. Etiam pell
           sit amet,cons
         </p>
-        <strong class="price">R$ {{ product.price }}</strong>
+        <strong class="price">R$ {{ produtos.preco }}</strong>
       </div>
-      <a class="btn" @click="addToCart(product)">Adicionar ao carinho</a>
+      <a class="btn" @click="addToCart(produtos)">Adicionar ao carinho</a>
     </div>
   </div>
 </template>
@@ -20,11 +20,11 @@
 import { mapActions } from 'vuex';
 export default {
   name: 'Produto',
-  props: ['produto'],
+  props: ['produtos'],
   methods: {
     ...mapActions(['addProductToCart']),
     addToCart() {
-      this.addProductToCart({ product: this.product, quantity: 1 });
+      this.addProductToCart({ produtos: this.produtos, quantity: 1 });
     }
   }
 };

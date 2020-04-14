@@ -12,18 +12,18 @@
           placeholder="Pesquisar..."
         />
         <button>
-          <img src="../assets/images/search.svg" alt="search" />
+          <img src="@/assets/images/search.svg" alt="search" />
         </button>
       </div>
     </div>
-    <div v-for="(product, index) in filteredListProducts" :key="index">
-      <Product :product="product" />
+    <div v-for="(produto, id) in filteredListProducts" :key="id">
+      <Produto :produto="produto" />
     </div>
   </section>
 </template>
 
 <script>
-import Produto from './Produto.vue';
+import Produto from './Produto';
 import { mapState, mapActions } from 'vuex';
 
 export default {
@@ -42,15 +42,15 @@ export default {
   },
 
   computed: {
-    ...mapState({ products: state => state.products.products }),
+    ...mapState({ produtos: state => state.produtos.produtos }),
     filteredListProducts() {
       if (this.searchedP) {
-        return this.products.filter(product => {
+        return this.produtos.filter(produtos => {
           let regex = new RegExp(this.searchedP.trim(), 'gi');
-          return regex.test(product.name);
+          return regex.test(produtos.titulo);
         });
       } else {
-        return this.products;
+        return this.produtos;
       }
     }
   },

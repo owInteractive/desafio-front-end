@@ -1,0 +1,10 @@
+{
+    "produtos": [
+        {"id": 1, "titulo": "Notebook Acer Aspire 3 A315", "categoria": "Eletrônicos", "imagem": " ", "decricao": " ", "preco": "R$1.500,00"},
+        {"id": 2, "titulo": "Notebook Acer Aspire 3 A315", "categoria": "Eletrônicos", "imagem": " ", "decricao": " ", "preco": "R$1.500,00"},
+        {"id": 3, "titulo": "Notebook Acer Aspire 3 A315", "categoria": "Eletrônicos", "imagem": " ", "decricao": " ", "preco": "R$1.500,00"},
+        {"id": 4, "titulo": "Notebook Acer Aspire 3 A315", "categoria": "Eletrônicos", "imagem": " ", "decricao": " ", "preco": "R$1.500,00"},
+        {"id": 5, "titulo": "Notebook Acer Aspire 3 A315", "categoria": "Eletrônicos", "imagem": " ", "decricao": " ", "preco": "R$1.500,00"},
+        {"id": 6, "titulo": "Notebook Acer Aspire 3 A315", "categoria": "Eletrônicos", "imagem": " ", "decricao": " ", "preco": "R$1.500,00"}
+    ]
+}
