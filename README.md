@@ -28,7 +28,7 @@ Faça o download do arquivo [clique aqui para baixar](https://www.dropbox.com/sh
 ### Etapa 2
 
 - Na página de listagem dos produtos, faça:
-  * Consuma os produtos da API: [clique aqui para acessar a API](https://raw.githubusercontent.com/owInteractive/desafio-frontend-2019/master/produtos.json);
+  * Consuma os produtos da API: [clique aqui para acessar a API](https://raw.githubusercontent.com/owInteractive/desafio-frontend-2020/master/produtos.json);
   * Implementar o campo de pesquisa dos produtos;
   * Implementar a funcionalidade de adição de um produto ao carrinho.
 
