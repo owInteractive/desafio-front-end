@@ -64,7 +64,8 @@ Faça o download do arquivo [clique aqui para baixar](https://www.dropbox.com/sh
 ## Diferenciais
 
 - Utilizar o Nuxt ou a Vue CLI no desenvolvimento do projeto;
-- Utilizar o ECMA6+ para escrever o JS.
+- Utilizar o ECMA6+ para escrever o JS;
+- Utilizar Typescript;
 
 ## Conclusão
 
