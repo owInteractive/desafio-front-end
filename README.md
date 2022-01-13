@@ -1,4 +1,4 @@
-# Desafio FrontEnd - OW Interactive 2021
+# Desafio FrontEnd - OW Interactive
 
 ## Sobre a OW Interactive
 
