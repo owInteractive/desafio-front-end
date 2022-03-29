@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel">
+  <section class="carousel">
     <div
       class="carousel__slide a--fade"
       v-bind:class="slides[currentSlide].align"
@@ -7,10 +7,10 @@
     >
       <div class="container">
         <div class="row">
-          <div class="col-6">
-            <img src="" alt="" />
+          <div class="col-12 col-sm-6">
+            <img src alt />
           </div>
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <h2>{{ slides[currentSlide].title }}</h2>
             <p>{{ slides[currentSlide].description }}</p>
           </div>
@@ -26,7 +26,7 @@
         v-bind:class="currentSlide === index ? 'active' : ''"
       ></a>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -58,8 +58,6 @@ export default {
   methods: {
     changeBanner(sliderIndex) {
       this.currentSlide = sliderIndex;
-      clearInterval();
-      this.createSliderInterval();
     },
 
     createSliderInterval() {

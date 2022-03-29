@@ -1,4 +1,4 @@
-$default-padding: 16px;
+@import './variables.scss';
 
 @font-face {
     font-family: SourceSansPro;
@@ -9,15 +9,20 @@ $default-padding: 16px;
     src: url("../fonts/SourceSansPro-Bold.ttf");
 }
 @font-face {
-    font-family: SourceSansProBold;
+    font-family: SourceSansProBlack;
     src: url("../fonts/SourceSansPro-Black.ttf");
 }
 
-*,
 html,
-body {
+body, #app {
+    min-height: 100vh;
     font-size: 16px;
-    font-family: "SourceSansProBlack", sans-serif;
+    font-family: "SourceSansProRegular", sans-serif;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -29,10 +34,15 @@ a {
     }
 }
 
+p {
+    margin: 0;
+}
+
 .padding-x {
     padding: 0 $default-padding;
 }
 
 .padding-y {
-    padding: $default-padding 0;
+    padding-top: $default-padding;
+    padding-bottom: $default-padding;
 }
