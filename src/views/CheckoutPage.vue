@@ -7,11 +7,7 @@
             <div class="col-12">
               <div class="checkout__group">
                 <label for="">Nome *</label>
-                <input
-                  type="text"
-                  v-model="v$.name.$model"
-                  v-maska="{ mask: 'S*' }"
-                />
+                <input type="text" v-model="v$.name.$model" />
               </div>
             </div>
             <div class="col-12">

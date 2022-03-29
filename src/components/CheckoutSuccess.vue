@@ -6,7 +6,7 @@
         <img src="../assets/confirmed.png" alt="" srcset="" />
       </div>
       <h2>Seu cadastro foi solicitado com sucesso!</h2>
-      <router-link to="/" @click="clearCart()">
+      <router-link to="/">
         <svg
           width="20"
           height="13"
@@ -41,9 +41,6 @@ export default {
   methods: {
     closeModal() {
       this.$emit("closeModal", this.viewModal);
-    },
-    clearCart() {
-      this.$store.commit("clearCart");
     },
   },
 };
