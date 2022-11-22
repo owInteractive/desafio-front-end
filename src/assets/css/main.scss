@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "FontProjectMktPlaceRegular";
+  src: url("../resources/fonts/SourceSansPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FontProjectMktPlaceBlack";
+  src: url("../resources/fonts/SourceSansPro-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FontProjectMktPlaceBold";
+  src: url("../resources/fonts/SourceSansPro-Bold.ttf") format("truetype");
+}
+
+#app {
+  font-family: FontProjectMktPlaceBold;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pages-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  margin-top: 30px;
+}
+
+
+.filter-products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  margin-top: 32px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+
+  .title {
+    font-family: "FontProjectMktPlaceBold";
+    color: #000000;
+    margin: 0;
+    width: 100%;
+  }
+
+  .input {
+    display: flex;
+
+    input {
+      flex: 1 0 auto;
+      border: 1px solid #909090;
+      border-radius: 4px 0 0 4px;
+      padding: 6px 16px;
+      outline: none;
+
+      &:focus,
+      &:focus-visible {
+        border: 1px solid #8e36b7;
+      }
+
+      &::placeholder {
+        font-size: 12px;
+        color: #ccc;
+      }
+    }
+
+    button {
+      background: #8e36b7;
+      padding: 4px 12px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+
+      img {
+        height: 16px;
+      }
+    }
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.checkout-view {
+  min-height: 90vh;
+}
+
+.checkout {
+  flex: 1;
+  margin-top: 80px;
+
+  .agroup {
+    margin-top: 24px;
+
+    label {
+      font-weight: 600;
+      display: block;
+      color: #434343;
+    }
+
+    input {
+      color: #434343;
+      width: 100%;
+      outline: none;
+      border: 1px solid #909090;
+      border-radius: 4px;
+      padding: 4px 8px;
+    }
+
+    span {
+      font-size: 12px;
+      color: #c31717;
+    }
+  }
+
+  .button {
+    width: 100%;
+    border-radius: 4px;
+    padding: 8px 16px;
+    background: #8e36b7;
+    border: 1px solid #8e36b7;
+    color: #fff;
+    margin-top: 50px;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}

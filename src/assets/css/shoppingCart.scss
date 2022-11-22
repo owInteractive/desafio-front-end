@@ -1,0 +1,165 @@
+.shooping-cart {
+  min-height: 80vh;
+  margin: 50px;
+}
+
+.container {
+  flex: 1;
+}
+
+.shooping-cart .header-table {
+  td {
+    text-align: center;
+    font-size: 18px;
+    font-family: "FontProjectMktPlaceBold";
+    padding: 16px 0;
+    text-transform: uppercase;
+  }
+}
+
+.shooping-cart .body-table {
+  button {
+    background: none;
+    border: none;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
+  .quantity {
+    display: flex;
+    justify-content: center;
+
+    button {
+      background: transparent;
+      border: 1px solid #434343;
+      color: #434343;
+      padding: 2px 8px;
+      transition: 0.2s all;
+
+      &:first-of-type {
+        border-radius: 4px 0 0 4px;
+      }
+
+      &:last-of-type {
+        border-radius: 0 4px 4px 0;
+      }
+
+      &:hover {
+        background: #ccc;
+      }
+    }
+
+    input {
+      border: 1px solid #434343;
+      border-left: 0;
+      border-right: 0;
+      max-width: 80px;
+      outline: none;
+      text-align: center;
+    }
+  }
+
+}
+
+.description {
+  div {
+    flex: 1;
+    //   margin-left: 6px;
+
+    span {
+      color: #8e36b7;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 600;
+      color: #434343;
+    }
+  }
+}
+
+.prices {
+  margin-left: 45px;
+
+  p,
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #434343;
+  }
+}
+
+.total {
+  h3 {
+    font-family: "FontProjectMktPlaceBold";
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  p {
+    color: #8e36b7;
+    font-family: "FontProjectMktPlaceBold";
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  span {
+    color: #434343;
+  }
+
+  &--bordered {
+    padding-bottom: 16px;
+    border-bottom: 2px solid #ccc;
+  }
+}
+
+.controls {
+  .clear {
+    background: transparent;
+    border: 0;
+    color: #434343;
+    font-family: "SourceSansProBold", sans-serif;
+    transition: 0.2s all;
+
+    &:hover {
+      color: #8e36b7;
+    }
+  }
+
+  .continue {
+    border-radius: 4px;
+    padding: 8px 16px;
+    background: #cfcfcf;
+    border: 1px solid #cfcfcf;
+    color: #434343;
+
+    &:hover {
+      background: darken(#cfcfcf, 50%);
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .finish {
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-left: 16px;
+    background: #8e36b7;
+    border: 1px solid #8e36b7;
+    color: #fff;
+    transition: 0.2s all;
+
+    &:hover {
+      background: lighten(#8e36b7, 20%);
+      border: 1px solid lighten(#8e36b7, 20%);
+      text-decoration: none;
+      color: #FFFF;
+    }
+  }
+}
