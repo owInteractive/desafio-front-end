@@ -17,8 +17,5 @@ export default defineComponent({
     Header,
     Footer,
   },
-  mounted() {
-    this.$store.dispatch("getProductsFromLocalStorage");
-  },
 });
 </script>

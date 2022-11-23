@@ -128,21 +128,22 @@ input:checked+.slide-container .nav label {
     ul.slides {
         display: block;
         position: relative;
-        height: 500px;
+        height: 200px;
         margin: 0;
         padding: 0;
         overflow: hidden;
         list-style: none;
     }
 
+
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1024) {
 
     ul.slides {
         display: block;
         position: relative;
-        height: 500px;
+        height: 300px;
         margin: 0;
         padding: 0;
         overflow: hidden;

@@ -2,14 +2,14 @@
   <div class="render-cards">
     <div v-for="item in items" :key="item.id">
       <b-card no-body class="cards">
-        <divr class="align-images">
+        <div class="align-images">
           <b-card-img
             class="render-images"
             :src="item.img"
             alt="Images dos produtos"
             top
           ></b-card-img>
-        </divr>
+        </div>
         <b-card-body>
           <b-card-sub-title class="mb-2 subtitle">{{
             item.category

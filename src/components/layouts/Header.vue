@@ -1,7 +1,9 @@
 <template>
   <div class="header">
-    <img :src="logo" class="logo" alt="logo" @click="homeRouter()" />
-    <div class="header-right">
+    <router-link :to="{ name: 'home' }">
+      <img :src="logo" class="logo" alt="logo" />
+    </router-link>
+    <div class="header-right products">
       <router-link :to="{ name: 'products' }">
         <a>Produtos</a>
       </router-link>
@@ -27,6 +29,9 @@ export default defineComponent({
       items: [],
     };
   },
+  mounted() {
+    this.$store.dispatch("getProductsFromLocalStorage");
+  },
   computed: {
     itemsCount() {
       return this.$store.getters.getCountProductsInCart;
@@ -34,7 +39,9 @@ export default defineComponent({
   },
   methods: {
     homeRouter() {
-      this.$router.push({ name: "home" });
+      if (this.$router.name != "home") {
+        this.$router.push({ name: "home" });
+      }
     },
   },
 });

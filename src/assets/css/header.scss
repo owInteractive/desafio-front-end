@@ -8,17 +8,16 @@
 .header a {
   float: left;
   color: #808080;
-  // text-align: center;
   padding: 5px;
   text-decoration: none;
-  line-height: 5px;
+  line-height: 4px;
   border-radius: 3px;
   font-size: 16px;
   margin-top: 4px;
 }
 
 .header img.logo {
-  margin-left: 10%;
+  margin-left: 70%;
 }
 
 .header img.logo:hover {
@@ -34,7 +33,7 @@
 .header-right {
   float: right;
   display: flex;
-  margin-right: 15%;
+  margin-right: 10%;
 }
 
 .header-quantity {
@@ -50,8 +49,8 @@
 @media screen and (max-width: 600px) {
   .header a {
     float: none;
-    display: block;
     text-align: left;
+    line-height: 15px;
   }
 
   .header-right {
