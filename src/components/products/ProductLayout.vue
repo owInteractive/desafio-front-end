@@ -8,7 +8,7 @@
       <p class="product-details-name">{{ product.name }}</p>
       <div class="product-details-description">
         <p class="product-details-description-text">
-          {{ characterLimiter(product.description, 100) }}<span class="read-more">... <BIconArrowRight color="grey" /></span>          
+          {{ characterLimiter(product.description, 70) }}<span class="read-more">... <BIconArrowRight color="grey" /></span>          
         </p>        
       </div>
       <p class="product-details-price">{{ brazilianCurrency(product.price) }}</p>
