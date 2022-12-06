@@ -6,14 +6,18 @@ import './registerServiceWorker'
 import router from './router'
 // Vuex
 import store from './store'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue' // importando o Bootstrap Vue
-import 'bootstrap/dist/css/bootstrap.css' // Importando CSS do Bootstrap Vue
-import 'bootstrap-vue/dist/bootstrap-vue.css' // Importando CSS do Bootstrap Vue
+// Bootstrap
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+// Vue Carousel
+import VueCarousel from 'vue-carousel'
 // Styles (Sass)
 import "./assets/sass/styles.sass"
 
-Vue.use(BootstrapVue) // Adicionando o bootstrap vue na aplicação vue
-Vue.use(IconsPlugin) // Adicionando o plugin de ícones do bootstrap vue na aplicação vue
+Vue.use(VueCarousel)
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
 
