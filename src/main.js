@@ -12,8 +12,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Vue Carousel
 import VueCarousel from 'vue-carousel'
+// Axios
+import api from './axios'
 // Styles (Sass)
 import "./assets/sass/styles.sass"
+
+Vue.prototype.$http = api
 
 Vue.use(VueCarousel)
 Vue.use(BootstrapVue)
