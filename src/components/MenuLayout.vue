@@ -32,7 +32,7 @@ export default {
   width: 100%
   height: 10%  
   font-family: 'SourceSansBold', "sans-serif"
-  color: $grey-color  
+  color: $grey-light-color 
 
   .nav-logo     
     font-size: 1.3rem

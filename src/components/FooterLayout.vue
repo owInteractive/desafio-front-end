@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <p>Footer</p>
+    <p>MktPlace</p>
   </div>
 </template>
 
@@ -15,9 +15,16 @@ export default {
 @import "@/assets/sass/variables.sass"
 @import "@/assets/sass/mixins.sass"
 
-.footer
-  background-color: #2D2D2D  
+.footer  
   width: 100%
-  height: 10%  
+  height: 10%
+  @include display-direction-justify-align($jus: center, $ali: center)
+  font-family: 'SourceSansBold', "sans-serif"
+  background-color: $grey-light-color
+  color: $grey-color
+  font-size: 1.3rem
+  
+  p    
+    margin: 0px
 
 </style>
