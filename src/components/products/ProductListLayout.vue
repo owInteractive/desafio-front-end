@@ -118,8 +118,7 @@ export default {
     display: flex    
     justify-content: space-between
       
-    .product-list-item-col
-      width: 32.5%    
+    .product-list-item-col        
       padding-left: 0%
       padding-right: 0%     
       margin-top: 3%    

@@ -13,7 +13,7 @@
       </div>
       <p class="product-details-price">{{ brazilianCurrency(product.price) }}</p>
     </div>
-    <div class="product-button">
+    <div class="product-button" @click="addToBag(product)">
       <p class="product-button-text">Adicionar ao carrinho</p>
     </div>
   </div>
@@ -27,7 +27,13 @@ export default {
   name: 'ProductLayout',
   components: { BIconArrowRight },
   props: ['product'],
-  mixins: [globalMixins], 
+  mixins: [globalMixins],
+  methods: {
+    addToBag (product) {     
+      product.quantity = 1
+      this.$store.dispatch({type: 'products/addToBag', product})     
+    },
+  }
 }
 </script>
 
