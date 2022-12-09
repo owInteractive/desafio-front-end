@@ -70,7 +70,7 @@
         <button @click="() => this.$router.push({ name: 'home' })">Continuar comprando</button>
       </div>
       <div class="col-lg-3 cart-item-actions-buy">
-        <button>Concluir compra</button>
+        <button @click="() => this.$router.push({ name: 'checkout' })">Concluir compra</button>
       </div>
     </div>
   </div>
