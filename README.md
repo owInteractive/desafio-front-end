@@ -1,8 +1,5 @@
+
 # Desafio FrontEnd - OW Interactive
-
-## Sobre a OW Interactive
-
-Fazemos parte do universo digital, focada em criar e desenvolver experiências interativas, integrando planejamento, criatividade e tecnologia. Conheça mais sobre nós em: [OW Interactive - Quem somos](http://www.owinteractive.com/quem-somos/).
 
 ## Pré-requisitos
 
@@ -71,6 +68,49 @@ Faça o download do arquivo [clique aqui para baixar](https://www.dropbox.com/sh
 
 Crie um fork e submeta ao Github o seu desafio. Após isso envie um e-mail para letsrock@owinteractive.com, com o assunto [DESAFIO FRONT-END] com o link para o seu desafio. Obrigado por participar e boa sorte =)
 
+## Solução aplicada ao desafio
 
+Fiz o desenvolvimento utilizando as tecnologias recomendas, bem como, as 
+boas práticas para atender a demanda solicitada. 
 
+## Tecnologias utilizadas no projeto
 
+- [x]  Vue
+- [x]  Vuex
+- [x]  Vue-Router
+- [x]  CSS/SCSSS
+- [x]  Bootstrapyarn 
+- [x]  Bootstrap-vue
+- [x]  Javascript
+- [x]  Typescript
+
+## Iniciar o projeto localmente
+
+Instale as dependências:
+
+```bash
+  yarn
+```
+Inicie o servidor em modo desenvolvimento:
+
+```bash
+  yarn serve
+```
+## Autor
+
+- [@danielverdan](https://github.com/DanielVerdan)
+
+## 🚀 Sobre mim
+
+Sou um cara apaixonado por tecnologia e que sempre acreditou que a mesma poderia mudar o mundo. O que de fato ficou evidenciado nos últimos anos, visto o turbilhão de informações e avanços tecnológicos que tivemos. 
+Encontrei no desenvolvimento de sistemas a oportunidade de transformar a vida das pessoas através de sistemas que consigam auxilia-las em seus processos diários, de forma fácil e prática. 
+Ao longos dos anos na minha jornada, conheci diversas pessoas que foram responsáveis por moldar meu desenvolvimento na área de tecnologia e pelas quais tenho grande apreço. 
+Sempre fui um grande adepto do desenvolvimento web e procurei me especializar através de cursos, palestras e livros sobre o assunto.
+Hoje possuo vasta experiência em desenvolvimento web, utilizando as mais diversas tecnologias presentes no mercado. 
+
+Me disponho a estar sempre em busca de conhecer coisas novas e ter excelentes relacionamentos.
+Hoje possuo vasta experiência no desenvolvimento web, trabalhando em alta performance com as mais diversas e atuais tecnologias existentes no mercado.  
+
+Acredito que com conhecimento e experiência alinhados, não há nada que não se possa ser feito na área da tecnologia.
+
+"Nada é tão bom que não possa melhorar e nem tão ruim que não possa piorar, os extremos nunca serão alcançados."
