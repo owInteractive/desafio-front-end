@@ -38,7 +38,7 @@ export default {
   methods: {
     async getProducts () {
       this.loading = true
-      await this.$http.get()
+      await this.$http.listProduct()
       .then(response => {
         this.products = response.data
         this.originalProducts = response.data
@@ -65,7 +65,7 @@ export default {
       this.products = obj     
     }
   },
-  mounted () {
+  mounted () {   
     this.getProducts()
   }
 }

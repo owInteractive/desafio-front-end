@@ -15,7 +15,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Vue Carousel
 import VueCarousel from 'vue-carousel'
 // Vuelidate
-// import Vuelidate from 'vuelidate'
+import Vuelidate from 'vuelidate'
 // Styles (Sass)
 import "./assets/sass/styles.sass"
 
@@ -24,7 +24,7 @@ Vue.prototype.$http = api
 Vue.use(VueCarousel)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-// Vue.use(Vuelidate)
+Vue.use(Vuelidate)
 
 Vue.config.productionTip = false
 
