@@ -9,12 +9,14 @@
           </button>          
         </div>
     </div>
-      
+    <div v-if="loading" class="loading">
+      <img src="@/assets/images/loading.gif">
+    </div>      
     <div class="row product-list-item-products">
       <div class="col-lg-4 product-list-item-col" v-for="product in products" :key="product.id">
         <ProductLayout :product="product" />
-      </div>
-    </div>   
+      </div>      
+    </div>    
   </div>
 </template>
 
@@ -30,10 +32,12 @@ export default {
       products: null,
       originalProducts: null,
       searchField: '',
+      loading: false,
     }
   },
   methods: {
     async getProducts () {
+      this.loading = true
       await this.$http.get()
       .then(response => {
         this.products = response.data
@@ -43,6 +47,9 @@ export default {
       })
       .catch(error => {
         console.log(error)
+      })
+      .finally(() => {
+        this.loading = false
       })
     },
     searchProduct () {
@@ -121,6 +128,16 @@ export default {
     .product-list-item-col        
       padding-left: 0%
       padding-right: 0%     
-      margin-top: 3%    
+      margin-top: 3%
+    
+  .loading
+    height: 100vh
+    width: 100vw    
+   
+    @include display-direction-justify-align($dis: flex, $jus: center, $ali: center)   
+
+    img
+      width: 50px
+      height: 50px     
        
 </style>

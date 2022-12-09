@@ -13,8 +13,11 @@
       </div>
       <p class="product-details-price">{{ brazilianCurrency(product.price) }}</p>
     </div>
-    <div class="product-button" @click="addToBag(product)">
+    <div v-if="!isInBag(product)" class="product-button product-button-add" @click="addToBag(product)">
       <p class="product-button-text">Adicionar ao carrinho</p>
+    </div>
+    <div v-else class="product-button product-button-remove" @click="$store.dispatch({type: 'products/removeFromBag', product})">
+      <p class="product-button-text">Remover do carrinho</p>
     </div>
   </div>
 </template>
@@ -28,12 +31,20 @@ export default {
   components: { BIconArrowRight },
   props: ['product'],
   mixins: [globalMixins],
+  computed: { 
+    getProductsInBag () {
+      return this.$store.getters['products/getProductsInBag']
+    }    
+  },
   methods: {
     addToBag (product) {     
       product.quantity = 1
       this.$store.dispatch({type: 'products/addToBag', product})     
     },
-  }
+    isInBag (product) {      
+      return this.getProductsInBag.find(item => item.id === product.id)
+    },
+  },
 }
 </script>
 
@@ -92,16 +103,22 @@ export default {
     justify-content: center
     align-items: center
     border-top: 1px solid $grey-light-color
-    cursor: pointer
+    cursor: pointer    
+    font-family: "SourceSansBold", "sans-serif"
+    text-transform: uppercase
+
+    .product-button-text      
+      margin: 0   
+
+  .product-button-add 
     color: $purple-light-color
   
     &:hover
       background-color: $purple-color
       color: $light-color
 
-    .product-button-text
-      font-family: "SourceSansBold", "sans-serif"
-      text-transform: uppercase
-      margin: 0   
+  .product-button-remove
+    background-color: $red-color
+    color: $light-color    
 
 </style>

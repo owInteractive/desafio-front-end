@@ -6,9 +6,9 @@
       </div>
       <div class="nav-items"> 
         <span>Produtos</span>
-        <router-link to="/">
+        <router-link to="/carrinho">
             <ShoppingCart />
-            <span class="menu-badge">1</span>        
+            <span v-if="productsInBag.length > 0" class="menu-badge">{{ productsInBag.length }}</span>        
         </router-link>               
       </div>
     </div>
@@ -17,9 +17,14 @@
 
 <script>
 import ShoppingCart from '@/assets/icons/shopping-cart.svg'
+import { mapState } from 'vuex'
+
 export default {
   name: 'MenuLayout',
   components: { ShoppingCart },
+  computed: {    
+    ...mapState("products", ["productsInBag"]),
+  },
 }
 </script>
 
@@ -32,7 +37,8 @@ export default {
   width: 100%
   height: 10%  
   font-family: 'SourceSansBold', "sans-serif"
-  color: $grey-light-color 
+  color: $grey-light-color
+  box-shadow: 0 0 20px $grey-shadow-color
 
   .nav-logo     
     font-size: 1.3rem
