@@ -8,7 +8,7 @@
         <span>Produtos</span>
         <router-link to="/carrinho">
             <ShoppingCart />
-            <span v-if="productsInBag.length > 0" class="menu-badge">{{ productsInBag.length }}</span>        
+            <span v-if="getTotalProductsInBag > 0" class="menu-badge">{{ getTotalProductsInBag }}</span>        
         </router-link>               
       </div>
     </div>
@@ -17,13 +17,13 @@
 
 <script>
 import ShoppingCart from '@/assets/icons/shopping-cart.svg'
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'MenuLayout',
   components: { ShoppingCart },
   computed: {    
-    ...mapState("products", ["productsInBag"]),
+    ...mapGetters("products", ["getTotalProductsInBag"]),
   },
 }
 </script>

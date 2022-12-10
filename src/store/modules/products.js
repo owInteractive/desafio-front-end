@@ -13,17 +13,19 @@ export default {
     REMOVE_FROM_BAG(state, productId) {
       let updatedBag = state.productsInBag.filter(item => productId != item.id)
       state.productsInBag = updatedBag
-      localStorage.setItem("productsInBag", JSON.stringify(state.productsInBag));   
+      localStorage.setItem("productsInBag", JSON.stringify(state.productsInBag))  
     },
     DECREASE_PRODUCT(state, product) {     
       let itemIndex = state.productsInBag.findIndex(item => item.id === product.id)
       product.quantity--
       Vue.set(state.productsInBag, itemIndex, product)
+      localStorage.setItem("productsInBag", JSON.stringify(state.productsInBag))
     },
     INCREASE_PRODUCT(state, product) {    
       let itemIndex = state.productsInBag.findIndex(item => item.id === product.id)
       product.quantity++
-      Vue.set(state.productsInBag, itemIndex, product)     
+      Vue.set(state.productsInBag, itemIndex, product)
+      localStorage.setItem("productsInBag", JSON.stringify(state.productsInBag)) 
     },
     CLEAR_BAG(state) {
       state.productsInBag = []
@@ -51,5 +53,12 @@ export default {
     getProductsInBag(state) {
         return state.productsInBag
     },   
-  } 
+    getTotalProductsInBag(state) {
+      let total = 0
+      state.productsInBag.forEach(item => {
+        total += item.quantity
+      })
+      return total
+    }
+  },  
 }
