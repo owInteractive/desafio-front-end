@@ -1,5 +1,5 @@
 <template>
-  <div class="cart container-fluid">    
+  <div v-if="getProductsInBag.length > 0" class="cart container-fluid">    
     <div class="cart-item-header row">
       <div class="col cart-item-header-description"></div>
       <div class="col cart-item-header-description">
@@ -72,6 +72,14 @@
       <div class="col-lg-3 cart-item-actions-buy">
         <button @click="() => this.$router.push({ name: 'checkout' })">Concluir compra</button>
       </div>
+    </div>
+  </div>
+  <div v-else class="cart-empty container-fluid">
+    <div class="cart-empty-item row">
+      <div class="col-lg-4 offset-lg-4">
+        <p>Seu carrinho está vazio</p>
+        <router-link to="/">Voltar para home</router-link>
+      </div>  
     </div>
   </div>
 </template>
@@ -286,4 +294,20 @@ export default {
         background-color: $purple-color
         color: $light-color
         font-family: 'SourceSansBold', "sans-serif"
+
+.cart-empty    
+  width: 100%
+  min-height: 80%
+  display: flex
+  justify-content: center
+  align-items: center
+
+  .cart-empty-item
+    width: 100%
+    text-align: center
+
+    a
+      text-decoration: none
+      font-family: 'SourceSansBold', "sans-serif"
+
 </style>
