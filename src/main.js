@@ -16,6 +16,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueCarousel from 'vue-carousel'
 // Vuelidate
 import Vuelidate from 'vuelidate'
+// V-Mask
+import VueMask from 'v-mask'
 // Styles (Sass)
 import "./assets/sass/styles.sass"
 
@@ -25,6 +27,7 @@ Vue.use(VueCarousel)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(Vuelidate)
+Vue.use(VueMask)
 
 Vue.config.productionTip = false
 

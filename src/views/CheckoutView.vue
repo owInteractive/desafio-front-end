@@ -23,7 +23,7 @@
             <div class="col-lg-12 checkout-items-group-row-input"> 
                 <label for="">CPF*</label>
                 <input type="text" v-model="form.cpf" :class="$v.form.cpf.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.cpf.$error ? 'Obrigatório' : ''" 
+                :placeholder="$v.form.cpf.$error ? 'Obrigatório' : ''" v-mask="'###.###.###-##'" 
                 />               
             </div>
           </div>
@@ -31,13 +31,13 @@
             <div class="col-lg-6 checkout-items-group-row-input"> 
                 <label for="">Data de Nascimento*</label>
                 <input type="text" v-model="form.birth" :class="$v.form.birth.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.birth.$error ? 'Obrigatório' : ''"
+                :placeholder="$v.form.birth.$error ? 'Obrigatório' : ''" v-mask="'##/##/####'" 
                 />               
             </div>
             <div class="col-lg-6 checkout-items-group-row-input"> 
                 <label for="">Telefone*</label>
                 <input type="tel" v-model="form.phone" :class="$v.form.phone.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.phone.$error ? 'Obrigatório' : ''" 
+                :placeholder="$v.form.phone.$error ? 'Obrigatório' : ''" v-mask="'(##) #####-####'" 
                 />                
             </div>
           </div>        
@@ -48,7 +48,7 @@
                 <label for="">CEP*</label>
                 <input type="text" v-model="form.cep" :class="$v.form.cep.$error ? 'border-red' : ''" 
                 :placeholder="$v.form.cep.$error ? 'Obrigatório' : ''" @blur="form.cep ? searchCep() : ''" 
-                />               
+                v-mask="'#####-###'" />               
             </div>
           </div>
           <div class="row checkout-items-group-row">
@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
+import { required, email } from 'vuelidate/lib/validators'
 
 export default {
   name: 'CheckoutView',
@@ -130,7 +130,7 @@ export default {
   validations: {  
     form: {  
       name: { required },
-      email: { required },
+      email: { required, email },
       cpf: { required },
       birth: { required },
       phone: { required },
@@ -151,10 +151,11 @@ export default {
       alert("Usuário Cadastrado com Sucesso")      
     },
     async searchCep () {    
-      if ( this.form.cep.trim() == "" ) 
+      let cep = this.form.cep.trim().replace("-", "")     
+      if ( cep == "" ) 
         return
 
-      await this.$http.listCep(this.form.cep)
+      await this.$http.listCep(cep)
       .then(response => {        
         this.form.address = response.data.logradouro
         this.form.district = response.data.bairro
