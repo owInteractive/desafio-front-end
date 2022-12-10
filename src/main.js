@@ -9,7 +9,7 @@ import store from './store'
 // Axios
 import api from './axios'
 // Bootstrap
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BootstrapVue } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Vue Carousel
@@ -25,7 +25,6 @@ Vue.prototype.$http = api
 
 Vue.use(VueCarousel)
 Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
 Vue.use(Vuelidate)
 Vue.use(VueMask)
 

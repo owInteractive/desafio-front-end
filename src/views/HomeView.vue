@@ -16,11 +16,11 @@ export default {
 </script>
 
 <style scoped lang="sass">
+@import "@/assets/sass/mixins.sass"
 
 .home
   width: 100%
   height: 80%
-  display: flex
-  flex-direction: column 
+  @include display-direction-justify-align($dir: column)   
 
 </style>

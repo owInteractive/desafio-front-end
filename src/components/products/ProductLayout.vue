@@ -8,7 +8,7 @@
       <p class="product-details-name">{{ product.name }}</p>
       <div class="product-details-description">
         <p class="product-details-description-text">
-          {{ characterLimiter(product.description, 70) }}<span class="read-more">... <BIconArrowRight color="grey" /></span>          
+          {{ characterLimiter(product.description, 70) }}<span class="read-more">...</span>          
         </p>        
       </div>
       <p class="product-details-price">{{ brazilianCurrency(product.price) }}</p>
@@ -24,11 +24,9 @@
 
 <script>
 import globalMixins from '@/mixins/globalMixins'
-import { BIconArrowRight } from 'bootstrap-vue'
 
 export default {
   name: 'ProductLayout',
-  components: { BIconArrowRight },
   props: ['product'],
   mixins: [globalMixins],
   computed: { 
@@ -62,10 +60,8 @@ export default {
   .product-img
     width: 100%
     height: 50%
-    display: flex
-    justify-content: center
-    align-items: center
-
+    @include display-direction-justify-align($jus: center, $ali: center) 
+   
     img
       max-width: 100%
       max-height: 100%
@@ -99,9 +95,7 @@ export default {
 
   .product-button
     height: 10%
-    display: flex
-    justify-content: center
-    align-items: center
+    @include display-direction-justify-align($jus: center, $ali: center)     
     border-top: 1px solid $grey-light-color
     cursor: pointer    
     font-family: "SourceSansBold", "sans-serif"

@@ -26,7 +26,7 @@
         <p>{{ product.name }}</p>
       </div>
       <div class="col cart-item-products-description">
-        <button @click="() => $store.dispatch({type: 'products/decreaseProduct', product})">-</button>
+        <button :disabled="product.quantity <= 1" @click="() => $store.dispatch({type: 'products/decreaseProduct', product})">-</button>
           <span class="quantity">{{ product.quantity }}</span>
         <button @click="() => $store.dispatch({type: 'products/increaseProduct', product})">+</button>
       </div>

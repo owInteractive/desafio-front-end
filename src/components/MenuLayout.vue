@@ -55,9 +55,8 @@ export default {
     .nav-items      
       @include display-direction-justify-align() 
 
-      span        
+      span 
         
-
       a 
         margin-left: 30px
         text-decoration: none        

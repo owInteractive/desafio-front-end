@@ -200,10 +200,8 @@ export default {
 .checkout
   width: 60%
   min-height: 80%
-  display: flex  
-  justify-content: center
-  align-items: center
-
+  @include display-direction-justify-align($jus: center, $ali: center) 
+  
   .checkout-items
     
     .checkout-items-group     
