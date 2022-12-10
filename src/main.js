@@ -16,7 +16,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueCarousel from 'vue-carousel'
 // Vuelidate
 import Vuelidate from 'vuelidate'
-// V-Mask
+// Vue Input Mask
 import VueMask from 'v-mask'
 // Styles (Sass)
 import "./assets/sass/styles.sass"

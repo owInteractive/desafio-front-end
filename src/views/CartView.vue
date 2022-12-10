@@ -99,7 +99,10 @@ export default {
     removeFromBag (product) {
       this.$store.dispatch({type: 'products/removeFromBag', product})
     },
-    clearBag () {     
+    clearBag () {   
+      if (!confirm('Tem certeza que deseja remover todos os items do carrinho ?'))
+        return 
+
       this.$store.dispatch({type: 'products/clearBag'})
     }
   },

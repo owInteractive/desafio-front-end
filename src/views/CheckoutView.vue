@@ -7,7 +7,7 @@
             <div class="col-lg-12 checkout-items-group-row-input"> 
                 <label for="">Nome*</label>
                 <input type="text" v-model="form.name" :class="$v.form.name.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.name.$error ? 'Obrigatório' : ''" 
+                placeholder="Obrigatório" 
                 />               
             </div>
           </div>
@@ -15,7 +15,7 @@
             <div class="col-lg-12 checkout-items-group-row-input"> 
                 <label for="">E-mail*</label>
                 <input type="email" v-model="form.email" :class="$v.form.email.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.email.$error ? 'Obrigatório' : ''" 
+                placeholder="Obrigatório" 
                 />                
             </div>
           </div>
@@ -23,7 +23,7 @@
             <div class="col-lg-12 checkout-items-group-row-input"> 
                 <label for="">CPF*</label>
                 <input type="text" v-model="form.cpf" :class="$v.form.cpf.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.cpf.$error ? 'Obrigatório' : ''" v-mask="'###.###.###-##'" 
+                placeholder="Obrigatório | Formato: xxx.xxx.xxx-xx" v-mask="'###.###.###-##'"                 
                 />               
             </div>
           </div>
@@ -31,13 +31,13 @@
             <div class="col-lg-6 checkout-items-group-row-input"> 
                 <label for="">Data de Nascimento*</label>
                 <input type="text" v-model="form.birth" :class="$v.form.birth.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.birth.$error ? 'Obrigatório' : ''" v-mask="'##/##/####'" 
+                placeholder="Obrigatório | Formato: xx/xx/xxxx" v-mask="'##/##/####'" 
                 />               
             </div>
             <div class="col-lg-6 checkout-items-group-row-input"> 
                 <label for="">Telefone*</label>
                 <input type="tel" v-model="form.phone" :class="$v.form.phone.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.phone.$error ? 'Obrigatório' : ''" v-mask="'(##) #####-####'" 
+                placeholder="Obrigatório | Formato: (xx) xxxxx-xxxx" v-mask="'(##) #####-####'" 
                 />                
             </div>
           </div>        
@@ -47,7 +47,7 @@
             <div class="col-lg-12 checkout-items-group-row-input"> 
                 <label for="">CEP*</label>
                 <input type="text" v-model="form.cep" :class="$v.form.cep.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.cep.$error ? 'Obrigatório' : ''" @blur="form.cep ? searchCep() : ''" 
+                placeholder="Obrigatório | Formato: xxxxx-xxx" @blur="form.cep ? searchCep() : ''" 
                 v-mask="'#####-###'" />               
             </div>
           </div>
@@ -55,13 +55,13 @@
             <div class="col-lg-8 checkout-items-group-row-input"> 
                 <label for="">Endereço*</label>
                 <input type="text" v-model="form.address" :class="$v.form.address.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.address.$error ? 'Obrigatório' : ''" 
+                placeholder="Obrigatório" 
                 />               
             </div>
             <div class="col-lg-4 checkout-items-group-row-input"> 
                 <label for="">Número*</label>
                 <input type="text" v-model="form.number" :class="$v.form.number.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.number.$error ? 'Obrigatório' : ''" 
+                placeholder="Obrigatório" 
                 />                
             </div>
           </div>
@@ -73,7 +73,7 @@
             <div class="col-lg-6 checkout-items-group-row-input"> 
                 <label for="">Bairro*</label>
                 <input type="text" v-model="form.district" :class="$v.form.district.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.district.$error ? 'Obrigatório' : ''" 
+                placeholder="Obrigatório" 
                 />                
             </div>
           </div>
@@ -81,13 +81,13 @@
             <div class="col-lg-8 checkout-items-group-row-input"> 
                 <label for="">Cidade*</label>
                 <input type="text" v-model="form.city" :class="$v.form.city.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.city.$error ? 'Obrigatório' : ''" 
+                placeholder="Obrigatório" 
                 />                
             </div>
             <div class="col-lg-4 checkout-items-group-row-input"> 
                 <label for="">Estado*</label>
                 <input type="text" v-model="form.state" :class="$v.form.state.$error ? 'border-red' : ''" 
-                :placeholder="$v.form.state.$error ? 'Obrigatório' : ''" 
+                placeholder="Obrigatório" 
                 />                
             </div>
           </div>       
@@ -101,14 +101,18 @@
         </div>
       </div>
     </form>
+    <AlertLayout v-if="showModal" :modalInfo="modalInfo" @closeModal="showModal = false" />
   </div>
 </template>
 
 <script>
-import { required, email } from 'vuelidate/lib/validators'
+import { required, email, minLength } from 'vuelidate/lib/validators'
+import AlertLayout from '@/components/modals/AlertLayout.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'CheckoutView',
+  components: { AlertLayout },
   data () {
     return {  
       form: {    
@@ -124,17 +128,23 @@ export default {
         district: '',
         city: '',
         state: ''
-      }   
+      },
+      showModal: false,
+      modalInfo: {
+        message: '',
+        action: '',
+        icon: 'img/icons/success.png',
+      },
     }
   },
   validations: {  
     form: {  
       name: { required },
       email: { required, email },
-      cpf: { required },
-      birth: { required },
-      phone: { required },
-      cep: { required },
+      cpf: { required, minLength: minLength(14) },
+      birth: { required, minLength: minLength(10) },
+      phone: { required, minLength: minLength(15) },
+      cep: { required, minLength: minLength(9) },
       address: { required },
       number: { required },
       district: { required },
@@ -142,13 +152,19 @@ export default {
       state: { required }
     }
   },
+  computed: {    
+    ...mapState("products", ["productsInBag"]),
+  },
   methods: {
     handleSubmit () {
       this.$v.$touch()      
-      if (this.$v.$invalid) {       
+      if (this.$v.$invalid)     
         return
-      }
-      alert("Usuário Cadastrado com Sucesso")      
+
+      this.modalInfo.message = "Seu cadastro foi solicitado com sucesso!"  
+      this.modalInfo.action = "Voltar para home"
+      this.showModal = true
+      this.$store.dispatch({type: 'products/clearBag'})
     },
     async searchCep () {    
       let cep = this.form.cep.trim().replace("-", "")     
@@ -169,6 +185,10 @@ export default {
         this.loading = false
       })
     }
+  },
+  mounted () {
+    if ( this.productsInBag.length === 0 )
+      this.$router.push({name: 'home'})
   }
 }
 </script>

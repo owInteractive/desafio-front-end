@@ -44,9 +44,7 @@ export default {
       commit('INCREASE_PRODUCT', payload.product)
     },
     clearBag ({ commit }) {
-      if (confirm('Tem certeza que deseja remover todos os items do carrinho ?')) {
-        commit('CLEAR_BAG')
-      }
+      commit('CLEAR_BAG')      
     }
   },
   getters: {
