@@ -1,81 +1,79 @@
 <template>
-  <div v-if="getProductsInBag.length > 0" class="cart container-fluid">    
-    <div class="cart-item-header row">
-      <div class="col cart-item-header-description"></div>
-      <div class="col cart-item-header-description">
-        <p>Produtos</p>
-      </div>
-      <div class="col cart-item-header-description">
-        <p>Quantidade</p>
-      </div>
-      <div class="col cart-item-header-description">
-        <p>Valor Unitário</p>
-      </div>
-      <div class="col cart-item-header-description">
-        <p>Total</p>
-      </div>     
+  <div v-if="getProductsInBag.length > 0" class="cart container">    
+    <div class="cart-table row">
+      <table class="cart-table-item">
+        <thead class="cart-table-item-header">
+          <tr>
+            <th></th>
+            <th>Produtos</th>
+            <th>Quantidade</th>
+            <th>Valor Unitário</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody class="cart-table-item-body">
+          <tr class="cart-table-item-body-tr" v-for="product in getProductsInBag" :key="product.id">
+            <td class="cart-table-item-body-tr-garbage">
+              <span @click="removeFromBag(product)">
+                <GarbageIcon />
+              </span>
+            </td>       
+            <td class="cart-table-item-body-tr-description">
+              <span>{{ product.category }}</span>
+              <span>{{ product.name }}</span>
+            </td>
+            <td class="cart-table-item-body-tr-quantity">
+              <button :disabled="product.quantity <= 1" @click="() => $store.dispatch({type: 'products/decreaseProduct', product})">-</button>
+              <span class="quantity">{{ product.quantity }}</span>
+              <button @click="() => $store.dispatch({type: 'products/increaseProduct', product})">+</button>
+            </td>
+            <td class="cart-table-item-body-tr-value">
+              <span class="value-description">{{ brazilianCurrency(product.price) }}</span> 
+              &nbsp;à vista ou 10x {{ divideValue(product.price) }}
+            </td>
+            <td class="cart-table-item-body-tr-total">
+              <span class="value-description">{{ brazilianCurrency(product.price * product.quantity) }}</span> 
+              &nbsp;à vista ou 10x {{ divideValue(product.price * product.quantity) }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="cart-item-products row" v-for="product in getProductsInBag" :key="product.id">
-      <div class="col cart-item-products-description">
-        <span @click="removeFromBag(product)">
-          <GarbageIcon />
-        </span>
+    <div class="cart-total row">      
+      <div class="col-lg-3 offset-lg-6 cart-total-description">
+        <p class="cart-total-description-text">Total à vista</p>
       </div>
-      <div class="col cart-item-products-description cart-item-products-description-col-2">
-        <p>{{ product.category }}</p>
-        <p>{{ product.name }}</p>
-      </div>
-      <div class="col cart-item-products-description">
-        <button :disabled="product.quantity <= 1" @click="() => $store.dispatch({type: 'products/decreaseProduct', product})">-</button>
-          <span class="quantity">{{ product.quantity }}</span>
-        <button @click="() => $store.dispatch({type: 'products/increaseProduct', product})">+</button>
-      </div>
-      <div class="col cart-item-products-description">
-        <p>
-          <span class="value-description">{{ brazilianCurrency(product.price) }}</span> à vista ou 10x {{ divideValue(product.price) }}
-        </p>
-      </div>
-      <div class="col cart-item-products-description">
-        <p>
-          <span class="value-description">{{ brazilianCurrency(product.price * product.quantity) }}</span> à vista ou 10x {{ divideValue(product.price * product.quantity) }}
-        </p>
-      </div>
-    </div>
-    <div class="cart-item-total row">
-      <div class="col-lg-3 offset-lg-6 cart-item-total-description">
-        <p class="cart-item-total-description-text">Total à vista</p>
-      </div>
-      <div class="col-lg-3 cart-item-total-description">
-        <p class="cart-item-total-description-value">{{ brazilianCurrency(this.orderTotal()) }}</p>
+      <div class="col-lg-3 cart-total-description">
+        <p class="cart-total-description-value">{{ brazilianCurrency(this.orderTotal()) }}</p>
       </div>
     </div>
-    <div class="cart-item-instalment row">
-      <div class="col-lg-3 offset-lg-6 cart-item-instalment-description">
-        <p class="cart-item-instalment-description-text">Total Parcelado</p>
+    <div class="cart-instalment row">
+      <div class="col-lg-3 offset-lg-6 cart-instalment-description">
+        <p class="cart-instalment-description-text">Total Parcelado</p>
       </div>
-      <div class="col-lg-3 cart-item-instalment-description">
-        <p class="cart-item-instalment-description-value">em até 
-        <span class="cart-item-instalment-description-value-detailed">10x {{ divideValue(this.orderTotal()) }}</span> 
+      <div class="col-lg-3 cart-instalment-description">
+        <p class="cart-instalment-description-value">em até 
+        <span class="cart-instalment-description-value-detailed">10x {{ divideValue(this.orderTotal()) }}</span> 
         (Total {{ brazilianCurrency(this.orderTotal()) }})
         </p>
       </div>
-    </div>
-    <div class="cart-item-actions row">
-      <div class="col-lg-3 cart-item-actions-clear">
+    </div>  
+    <div class="cart-actions row">
+      <div class="col-lg-3 cart-actions-clear">
         <span @click="() => clearBag()">
           <GarbageIcon /> Limpar carrinho
         </span>       
       </div>
-      <div class="col-lg-3 offset-lg-3 cart-item-actions-buymore">
+      <div class="col-lg-3 offset-lg-3 cart-actions-buymore">
         <button @click="() => this.$router.push({ name: 'home' })">Continuar comprando</button>
       </div>
-      <div class="col-lg-3 cart-item-actions-buy">
+      <div class="col-lg-3 cart-actions-buy">
         <button @click="() => this.$router.push({ name: 'checkout' })">Concluir compra</button>
       </div>
-    </div>
-  </div>
+    </div>  
+  </div> 
   <div v-else class="cart-empty container-fluid">
-    <div class="cart-empty-item row">
+    <div class="cart-empty row">
       <div class="col-lg-4 offset-lg-4">
         <p>Seu carrinho está vazio</p>
         <router-link to="/">Voltar para home</router-link>
@@ -126,92 +124,117 @@ export default {
 
 .cart
   margin-top: 5%
-  width: 60%
+  width: 100%
   min-height: 80%
-  display: flex
-  flex-direction: column
-  align-items: center
-
-  .cart-item-header    
-    min-height: 5%
-    width: 100%    
-    border-bottom: 1px solid $dark-color
-    display: flex    
-    
-    p
-      font-family: 'SourceSansBold', "sans-serif"
-      text-transform: uppercase     
-
-  .cart-item-products
-    min-height: 12%
+  @include display-direction-justify-align($dir: column, $ali: center) 
+  
+  .cart-table
     width: 100%
-    border-bottom: 1px solid $dark-color
-    display: flex
-    justify-content: center
-    align-items: center  
-    
 
-    .cart-item-products-description
-      display: flex
+    .cart-table-item
+      width: 100%     
+      @include display-direction-justify-align($dir: column) 
 
-      span
-        cursor: pointer
+      .cart-table-item-header
+        width: 100%
+        border-bottom: 1px solid $dark-color
+
+        tr
+          width: 100%         
+          @include display-direction-justify-align($jus: space-around) 
+          padding-bottom: 2%
+
+          th            
+            font-family: 'SourceSansBold', "sans-serif"
+            text-transform: uppercase
+            font-size: 1.1rem
+          
+          th:first-child
+            width: 4%
+
+          th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5)
+            width: 24%
+         
+      .cart-table-item-body       
+        width: 100%
+        border-bottom: 1px solid $dark-color        
+        @include display-direction-justify-align($dir: column)  
         
-        svg
-          width: 18px 
-          height: 18px         
+        tr
+          padding-top: 2% 
+          padding-bottom: 2%
+          width: 100%
+          display: flex
+          border-bottom: 1px solid $dark-color       
 
-      button       
-        width: 20px
-        height: 27px       
-        display: flex
-        justify-content: center
-        align-items: center
-        cursor: pointer
-        font-size: 1.1rem
-        border: 1px solid $grey-light-color
-        background-color: $light-color
+          td
+            width: 25%           
+            display: flex            
+          
+          td:first-child
+            width: 4%
 
-      .quantity
-        display: flex
-        justify-content: center
-        align-items: center
-        width: 40px
-        height: 27px       
-        border: 1px solid $grey-light-color
-        font-family: 'SourceSansBold', "sans-serif"
+          td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5)
+            width: 24%           
+          
+          .cart-table-item-body-tr-description
+            @include display-direction-justify-align($dir: column)
+            
+            span
+              font-family: 'SourceSansBold', "sans-serif"
 
-      p
-      margin: 0    
-      padding: 0
+            span:first-child
+              color: $purple-color
+              font-size: 0.9rem  
 
-      .value-description
-        font-family: 'SourceSansBold', "sans-serif"
+            span:last-child
+              font-size: 1.1rem
 
-    .cart-item-products-description-col-2      
-      flex-direction: column
+          .cart-table-item-body-tr-quantity            
+            @include display-direction-justify-align($ali: center)
 
-      p
-        margin: 0    
-        padding: 0
-        font-family: 'SourceSansBold', "sans-serif"
+            span
+            cursor: pointer
 
-      p:first-child
-        color: $purple-color
-        font-size: 0.9rem        
-      
-      p:last-child
-        font-size: 1.1rem
+            button       
+              width: 22px
+              height: 35px             
+              @include display-direction-justify-align($jus: center, $ali: center)
+              cursor: pointer
+              font-size: 1.1rem
+              border: 1px solid $grey-light-color
+              background-color: $light-color
 
-  .cart-item-total    
-    min-height: 10%
-    width: 100%   
-    display: flex     
+            .quantity
+              @include display-direction-justify-align($jus: center, $ali: center)             
+              width: 40px
+              height: 35px       
+              border: 1px solid $grey-light-color
+              font-family: 'SourceSansBold', "sans-serif"
 
-    .cart-item-total-description
-      display: flex
-      justify-content: flex-end
-      align-items: center 
+          .cart-table-item-body-tr-value, .cart-table-item-body-tr-total, .cart-table-item-body-tr-garbage
+            @include display-direction-justify-align($ali: center)
+           
+            .value-description              
+              font-family: 'SourceSansBold', "sans-serif"
+
+          .cart-table-item-body-tr-garbage
+            
+            span
+              cursor: pointer
+        
+              svg
+                width: 22px 
+                height: 22px
+
+  .cart-total
+    width: 100%
+    display: flex  
+    padding-top: 2%
+    padding-bottom: 1%      
+
+    .cart-total-description     
+      @include display-direction-justify-align($jus: flex-end, $ali: center)
 
       p
         font-family: 'SourceSansBold', "sans-serif"
@@ -219,47 +242,45 @@ export default {
         padding: 0
         margin: 0
 
-      .cart-item-total-description-text
+      .cart-total-description-text
         font-size: 1.1rem
 
-      .cart-item-total-description-value
+      .cart-total-description-value
         font-size: 1.5rem
         color: $purple-color
   
-  .cart-item-instalment    
-    min-height: 10%
-    width: 100%   
+  .cart-instalment
+    width: 100%
     display: flex
-    border-bottom: 1px solid $dark-color  
+    border-bottom: 1px solid $dark-color
+    padding-top: 1%
+    padding-bottom: 2% 
 
-    .cart-item-instalment-description
+    .cart-instalment-description
       right: 0
-      display: flex
-      justify-content: flex-end
-      align-items: center
-      
-      .cart-item-instalment-description-text
+      @include display-direction-justify-align($jus: flex-end, $ali: center)
+           
+      .cart-instalment-description-text
         font-family: 'SourceSansBold', "sans-serif"   
         text-transform: uppercase
         font-size: 1.1rem
 
-      .cart-item-instalment-description-value
+      .cart-instalment-description-value
         margin-left: 50px
 
-        .cart-item-instalment-description-value-detailed
+        .cart-instalment-description-value-detailed
           font-family: 'SourceSansBold', "sans-serif"
 
-  .cart-item-actions   
-    min-height: 12%
+  .cart-actions   
+    padding-top: 2%
+    padding-bottom: 2%
     width: 100%
-    display: flex
-    
+    display: flex    
 
-    .cart-item-actions-clear   
-      padding: 0  
-      display: flex      
-      align-items: center
-
+    .cart-actions-clear   
+      padding: 0
+      @include display-direction-justify-align($ali: center)
+      
       span
         cursor: pointer
         
@@ -267,12 +288,10 @@ export default {
           width: 18px 
           height: 18px        
     
-    .cart-item-actions-buymore
+    .cart-actions-buymore
       padding: 0 1% 0 0
-      display: flex
-      justify-content: center
-      align-items: center
-      
+      @include display-direction-justify-align($jus: center, $ali: center)
+            
       button
         padding: 5%
         width: 100%
@@ -281,12 +300,10 @@ export default {
         color: $dark-color
         font-family: 'SourceSansBold', "sans-serif"
 
-    .cart-item-actions-buy
+    .cart-actions-buy
       padding: 0 0 0 1%
-      display: flex
-      justify-content: center
-      align-items: center
-
+      @include display-direction-justify-align($jus: center, $ali: center)
+      
       button
         padding: 5%
         width: 100%
@@ -298,10 +315,8 @@ export default {
 .cart-empty    
   width: 100%
   min-height: 80%
-  display: flex
-  justify-content: center
-  align-items: center
-
+  @include display-direction-justify-align($jus: center, $ali: center)
+ 
   .cart-empty-item
     width: 100%
     text-align: center
