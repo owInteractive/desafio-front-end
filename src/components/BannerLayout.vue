@@ -2,13 +2,13 @@
   <div class="banner">
     <carousel :per-page="1" :mouse-drag="false" paginationActiveColor='purple'>
       <slide class="banner-slide banner-slide-item-first">
-        <div class="banner-slide-items">
+        <div class="container banner-slide-items">
           <h1>Notebooks</h1>
           <p>As melhores ofertas</p>
         </div>       
       </slide>
       <slide class="banner-slide banner-slide-item-second">
-        <div class="banner-slide-items">
+        <div class="container banner-slide-items">
           <h1>Eletrodomésticos</h1>
           <p>Você só encontra aqui</p>
         </div> 
@@ -31,17 +31,16 @@ export default {
 @import "@/assets/sass/mixins.sass"
 
 .banner
-  width: 100%
-  height: 50%  
+  width: 100%   
         
   .banner-slide    
-    width: 100%
+    min-width: 100%
     max-height: 100%
     height: 250px
     @include display-direction-justify-align($jus: center, $ali: center)   
     
     .banner-slide-items
-      width: 60%
+      width: 100%
       @include display-direction-justify-align($dir: column, $ali: flex-end)     
       font-family: 'SourceSansBold', "sans-serif"
       color: $light-color

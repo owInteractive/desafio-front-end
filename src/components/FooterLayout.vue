@@ -15,7 +15,7 @@ export default {
 @import "@/assets/sass/variables.sass"
 @import "@/assets/sass/mixins.sass"
 
-.footer   
+.footer
   width: 100%
   height: 10%
   @include display-direction-justify-align($jus: center, $ali: center)

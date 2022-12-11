@@ -42,18 +42,18 @@
       </div>
     </div>
     <div class="cart-item-total row">
-      <div class="col-lg-2 offset-lg-8 cart-item-total-description">
+      <div class="col-lg-3 offset-lg-6 cart-item-total-description">
         <p class="cart-item-total-description-text">Total à vista</p>
       </div>
-      <div class="col-lg-2 cart-item-total-description">
+      <div class="col-lg-3 cart-item-total-description">
         <p class="cart-item-total-description-value">{{ brazilianCurrency(this.orderTotal()) }}</p>
       </div>
     </div>
     <div class="cart-item-instalment row">
-      <div class="col-lg-2 offset-lg-8 cart-item-instalment-description">
+      <div class="col-lg-3 offset-lg-6 cart-item-instalment-description">
         <p class="cart-item-instalment-description-text">Total Parcelado</p>
       </div>
-      <div class="col-lg-2 cart-item-instalment-description">
+      <div class="col-lg-3 cart-item-instalment-description">
         <p class="cart-item-instalment-description-value">em até 
         <span class="cart-item-instalment-description-value-detailed">10x {{ divideValue(this.orderTotal()) }}</span> 
         (Total {{ brazilianCurrency(this.orderTotal()) }})

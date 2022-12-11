@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <div class="menu-items">
+    <div class="menu-items container">
       <div class="nav-logo">        
         <span>Mkt<span class="t-purple">Place</span></span>      
       </div>
@@ -49,7 +49,7 @@ export default {
   .menu-items
     width: 100%
     height: 100%
-    @include display-direction-justify-align($jus: space-around, $ali: center)     
+    @include display-direction-justify-align($jus: space-between, $ali: center)     
     font-style: normal
     
     .nav-items      

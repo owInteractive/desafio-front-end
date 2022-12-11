@@ -50,25 +50,34 @@ export default {
 @import "@/assets/sass/variables.sass"
 @import "@/assets/sass/mixins.sass"
 
-.product  
-  height: 100%
-  width: 100%
+.product 
+  padding: 0   
+  margin-top: 3%  
   display: flex
   flex-direction: column 
   box-shadow: 0 0 20px $grey-shadow-color
+
+  @include media-xl
+    width: 32%
+
+  @include media-lg
+    width: 33%
+
+  @include media-md
+    width: 49.5% 
   
   .product-img
     width: 100%
-    height: 50%
+    height: 350px
     @include display-direction-justify-align($jus: center, $ali: center) 
    
-    img
+    img     
       max-width: 100%
       max-height: 100%
 
-  .product-details  
-    width: 100%
-    min-height: 40%
+  .product-details
+    height: 250px
+    width: 100%    
     padding: 5% 10% 5% 5%
 
     .product-details-category
@@ -93,8 +102,9 @@ export default {
       color: $dark-color
       font-size: 1.2rem
 
-  .product-button
-    height: 10%
+  .product-button 
+    width: 100%
+    height: 70px
     @include display-direction-justify-align($jus: center, $ali: center)     
     border-top: 1px solid $grey-light-color
     cursor: pointer    

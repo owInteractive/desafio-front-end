@@ -1,21 +1,16 @@
 <template>
-  <div class="container-fluid product-list">
-    <div class="product-list-item-search">
-        <p class="product-list-item-search-label">Encontre seu produto</p>
-        <div class="product-list-item-search-field">
+  <div class="container product-list">
+    <div class="product-list-item-search row">
+        <p class="product-list-item-search-label col-5 col-sm-3 offset-lg-1">Encontre seu produto</p>
+        <div class="product-list-item-search-field col-7 col-sm-8">
           <input type="text" placeholder="Pesquisar..." v-model="searchField" />
           <button @click="() => searchProduct()">
             <SearchIcon />
           </button>          
         </div>
-    </div>
-    <div v-if="loading" class="loading">
-      <img src="@/assets/images/loading.gif">
-    </div>      
-    <div v-if="products.length > 0" class="row product-list-item-products">
-      <div class="col-lg-4 product-list-item-col" v-for="product in products" :key="product.id">
-        <ProductLayout :product="product" />
-      </div>      
+    </div>       
+    <div v-if="products.length > 0" class="row product-list-item-products">      
+      <ProductLayout class="col-sm-12 col-md-6 col-lg-4" v-for="product in products" :key="product.id" :product="product" />          
     </div>
     <div v-else class="row product-list-item-no-products">
       <div class="col-lg-4 product-list-item-no-products-col">
@@ -36,13 +31,11 @@ export default {
     return {
       products: [],
       originalProducts: null,
-      searchField: '',
-      loading: false,
+      searchField: '',     
     }
   },
   methods: {
-    async getProducts () {
-      this.loading = true
+    async getProducts () {     
       await this.$http.listProduct()
       .then(response => {
         this.products = response.data
@@ -52,10 +45,7 @@ export default {
       })
       .catch(error => {
         console.log(error)
-      })
-      .finally(() => {
-        this.loading = false
-      })
+      })     
     },
     searchProduct () {
       if (this.searchField.trim() === "") {
@@ -81,63 +71,49 @@ export default {
 @import "@/assets/sass/mixins.sass"
 
 .product-list
-  width: 60%
+  width: 100%
   min-height: 100%
   @include display-direction-justify-align($dir: column, $ali: center) 
  
   .product-list-item-search   
+    padding-top: 1%
+    padding-bottom: 1%
     margin-top: 2%
-    width: 100%
-    min-height: 10%
+    width: 100%    
     @include display-direction-justify-align($jus: center, $ali: center)     
     box-shadow: 0 0 20px $grey-shadow-color
 
-    .product-list-item-search-label
-      width: 20%     
+    @include media-xs()
+      margin-top: 4%
+      margin-bottom: 4%
+
+    .product-list-item-search-label          
       margin: 0
       font-family: 'SourceSansBold', "sans-serif"
-      color: $grey-light-color
+      color: $grey-light-color 
 
-    .product-list-item-search-field
-      width: 70%
+    .product-list-item-search-field     
       height: 100%
       @include display-direction-justify-align($dis: flex, $jus: center, $ali: center)     
       
       input
-        width: 95%
-        height: 50%
-        padding: 1%
+        width: 90%       
+        padding: 0.5%
 
       button
-        margin-left: -2px
-        background-color: $purple-color
-        width: 5%
-        height: 50%
+        margin-left: -1px      
+        padding: 0.5%
+        background-color: $purple-color               
         cursor: pointer    
 
         svg
-          width: 24px          
+          width: 22px          
           color: $light-color
 
-  .product-list-item-products   
-    width: 100%
-    display: flex    
-    justify-content: space-between
-      
-    .product-list-item-col        
-      padding-left: 0%
-      padding-right: 0%     
-      margin-top: 3%
-    
-  .loading
-    height: 100vh
-    width: 100vw    
-   
-    @include display-direction-justify-align($jus: center, $ali: center)   
+  .product-list-item-products    
+    width: 100% 
 
-    img
-      width: 50px
-      height: 50px  
+    @include display-direction-justify-align($jus: space-between, $ali: center)    
 
   .product-list-item-no-products
     width: 100%
