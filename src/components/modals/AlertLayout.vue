@@ -39,16 +39,26 @@ export default {
 .alert
   top: 0
   bottom: 0
-  position: absolute
+  position: fixed
   width: 100%
+  height: 100%  
   @include display-direction-justify-align($dir: column, $jus: center, $ali: center) 
-  background: rgba(0, 0, 0, 0.6)
-  z-index: 10
+  background: $dark-opacity-color
+  z-index: 10  
 
   .alert-item    
-    width: 28%    
+    width: 38%    
     @include display-direction-justify-align($dir: column)     
     background-color: $light-color
+
+    @include media-xs
+      width: 100%
+    @include media-sm
+      width: 100%
+    @include media-md
+      width: 80%
+    @include media-lg
+      width: 60%    
 
     .alert-item-close      
       width: 100%
@@ -73,23 +83,38 @@ export default {
           width: 150px
           height: 150px
 
+          @include media-xs
+            width: 100px
+            height: 100px
+
       .alert-item-body-message
         margin: 1% 0
         width: 100%
         @include display-direction-justify-align($jus: center)
         font-size: 1.6rem
 
+        @include media-xs
+          font-size: 1.2rem
+
       .alert-item-body-action
         width: 100%
         @include display-direction-justify-align($jus: center)
 
-        span          
+        a          
+          text-decoration: none
           text-transform: uppercase         
           color: $purple-color
           cursor: pointer
 
+          @include media-xs
+            font-size: 0.8rem
+
         svg
           width: 18px 
           height: 18px
+
+          @include media-xs
+            width: 14px 
+            height: 14px
 
 </style>
