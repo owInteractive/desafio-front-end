@@ -19,7 +19,5 @@ export default {
 <style scoped lang="sass">
 #app 
   width: 100%
-  height: 100vh
-  display: flex
-  flex-direction: column 
+  height: 100%  
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="checkout container-fluid">
+  <div class="checkout container">
     <form @submit.prevent="handleSubmit">     
       <div class="row checkout-items">
         <div class="col-lg-6 checkout-items-group">
@@ -198,18 +198,38 @@ export default {
 @import "@/assets/sass/mixins.sass"
 
 .checkout
-  width: 60%
+  width: 100%
   min-height: 80%
   @include display-direction-justify-align($jus: center, $ali: center) 
   
   .checkout-items
+    @include media-md
+      margin: 5% 0
+    @include media-sm
+      margin: 5% 0
+    @include media-xs
+      margin: 5% 0   
     
     .checkout-items-group     
 
       .checkout-items-group-row
         margin-bottom: 5%
 
-        .checkout-items-group-row-input       
+        @include media-md
+          margin-bottom: 0%
+        @include media-sm
+          margin-bottom: 0%
+        @include media-xs
+          margin-bottom: 0%
+
+        .checkout-items-group-row-input
+
+          @include media-md
+            margin-bottom: 2%
+          @include media-sm
+            margin-bottom: 2%
+          @include media-xs
+            margin-bottom: 2%       
 
           input
             width: 100%
