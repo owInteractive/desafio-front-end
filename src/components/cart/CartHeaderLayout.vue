@@ -25,6 +25,9 @@ export default {
   width: 100%
   border-bottom: 1px solid $dark-color
 
+  @include media-medium-table()
+    display: none
+
   tr
     width: 100%         
     @include display-direction-justify-align($jus: space-around) 
@@ -38,7 +41,10 @@ export default {
     th:first-child
       width: 4%
 
-    th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5)
-      width: 24%    
+    th:nth-child(3)
+      width: 12%
+
+    th:nth-child(2), th:nth-child(4), th:nth-child(5)
+      width: 28%
 
 </style>
