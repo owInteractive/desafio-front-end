@@ -270,5 +270,6 @@ export default {
             background-color: $purple-color      
             color: $light-color
             font-family: 'SourceSansBold', "sans-serif"
+            border-radius: 4px
 
 </style>

@@ -184,6 +184,7 @@ export default {
         background-color: $grey-light-color
         color: $dark-color
         font-family: 'SourceSansBold', "sans-serif"
+        border-radius: 4px
 
         &:hover
           background-color: $grey-shadow-color
@@ -199,6 +200,7 @@ export default {
         background-color: $purple-color
         color: $light-color
         font-family: 'SourceSansBold', "sans-serif"
+        border-radius: 4px
 
         &:hover
           background-color: $purple-light-color

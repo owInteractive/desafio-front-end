@@ -1,11 +1,11 @@
 <template>
   <div class="menu">
     <div class="menu-items container">
-      <div class="nav-logo" @click="() => this.$router.push({name: 'home'})">        
+      <div class="nav-logo" @click="() => navigateToHome()">        
         <span>Mkt<span class="t-purple">Place</span></span>      
       </div>
       <div class="nav-items"> 
-        <span>Produtos</span>
+        <span @click="() => navigateToHome()">Produtos</span>
         <router-link to="/carrinho">
             <ShoppingCart />
             <span v-if="getTotalProductsInBag > 0" class="menu-badge">{{ getTotalProductsInBag }}</span>        
@@ -25,6 +25,12 @@ export default {
   computed: {    
     ...mapGetters("products", ["getTotalProductsInBag"]),
   },
+  methods: {
+    navigateToHome () {
+      if (this.$route.name !== 'home')
+        this.$router.push({name: 'home'}) 
+    }
+  }
 }
 </script>
 
@@ -56,7 +62,8 @@ export default {
     .nav-items      
       @include display-direction-justify-align() 
 
-      span 
+      span
+        cursor: pointer
         
       a 
         margin-left: 30px
