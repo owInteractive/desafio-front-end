@@ -94,7 +94,10 @@
         </div>
         <div class="col-lg-12 checkout-items-group">
           <div class="row checkout-items-group-row">
-            <div class="col-lg-4 offset-lg-8 checkout-items-group-row-button">
+            <div class="col-lg-8 checkout-items-group-row-button">
+              <p v-if="warning.show" class="warning">{{ warning.text }}</p>
+            </div>   
+            <div class="col-lg-4 checkout-items-group-row-button">              
               <button type="submit">Concluir compra</button>
             </div>
           </div>
@@ -135,6 +138,10 @@ export default {
         action: '',
         icon: 'img/icons/success.png',
       },
+      warning: {
+        show: false,
+        text: ''
+      },
     }
   },
   validations: {  
@@ -158,9 +165,11 @@ export default {
   methods: {
     handleSubmit () {
       this.$v.$touch()      
-      if (this.$v.$invalid)     
+      if (this.$v.$invalid) {
+        this.warning.show = true
+        this.warning.text = '* Campo preenchido incorretamente'
         return
-
+      }
       this.modalInfo.message = "Seu cadastro foi solicitado com sucesso!"  
       this.modalInfo.action = "Voltar para home"
       this.showModal = true
@@ -168,8 +177,9 @@ export default {
     },
     async searchCep () {    
       let cep = this.form.cep.trim().replace("-", "")     
-      if ( cep == "" ) 
+      if ( cep == "" ) {
         return
+      }
 
       await this.$http.listCep(cep)
       .then(response => {        
@@ -179,9 +189,19 @@ export default {
         this.form.state = response.data.uf
       })
       .catch(error => {
+        this.warning.show = true
+        this.warning.text = '* CEP não encontrado'
+        this.clearAddress()
         console.log(error)
       })      
-    }
+    },
+    clearAddress () {
+      this.form.cep = ""
+      this.form.address = ""
+      this.form.district = ""
+      this.form.city = ""
+      this.form.state = ""
+    },
   },
   mounted () {
     if ( this.productsInBag.length === 0 )
@@ -237,6 +257,12 @@ export default {
 
         .checkout-items-group-row-button
           margin-top: 2%
+
+          .warning          
+            font-family: 'SourceSansBold', "sans-serif"
+            font-size: 0.8rem
+            text-align: left
+            color: $red-color
 
           button            
             width: 100%
