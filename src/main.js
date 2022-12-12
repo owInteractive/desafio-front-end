@@ -1,6 +1,7 @@
 // Vue
 import Vue from 'vue'
 import App from './App.vue'
+// Config
 import './registerServiceWorker'
 // Vue Router
 import router from './router'

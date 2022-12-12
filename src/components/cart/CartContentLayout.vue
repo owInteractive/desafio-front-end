@@ -16,10 +16,12 @@
       <button @click="() => $store.dispatch({type: 'products/increaseProduct', product})">+</button>
     </td>
     <td class="cart-table-item-body-tr-value">
+      <p class="mobile-title">Valor Unitário</p>
       <span class="value-description">{{ brazilianCurrency(product.price) }}</span> 
       &nbsp;à vista ou 10x {{ divideValue(product.price) }}
     </td>
     <td class="cart-table-item-body-tr-total">
+      <p class="mobile-title">Total</p>
       <span class="value-description">{{ brazilianCurrency(product.price * product.quantity) }}</span> 
       &nbsp;à vista ou 10x {{ divideValue(product.price * product.quantity) }}
     </td>
@@ -150,7 +152,20 @@ export default {
         font-size: 0.8rem
     
       .value-description              
-        font-family: 'SourceSansBold', "sans-serif"             
+        font-family: 'SourceSansBold', "sans-serif"
+
+    .cart-table-item-body-tr-value, .cart-table-item-body-tr-total
+      p.mobile-title
+        display: none
+
+      @include media-medium-table     
+        p.mobile-title
+          display: block
+          margin: 0
+          text-align: center
+          font-family: 'SourceSansBold', "sans-serif"
+          color: $dark-color
+          font-size: 0.8rem
 
     .cart-table-item-body-tr-garbage
 

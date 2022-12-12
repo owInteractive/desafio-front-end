@@ -80,9 +80,6 @@ export default {
 
       this.$store.dispatch({type: 'products/clearBag'})
     }
-  },
-  mounted () {
-    console.log(this.getProductsInBag)    
   }
 }
 </script>
