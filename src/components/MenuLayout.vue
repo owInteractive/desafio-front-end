@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <div class="menu-items container">
-      <div class="nav-logo">        
+      <div class="nav-logo" @click="() => this.$router.push({name: 'home'})">        
         <span>Mkt<span class="t-purple">Place</span></span>      
       </div>
       <div class="nav-items"> 
@@ -42,6 +42,7 @@ export default {
 
   .nav-logo     
     font-size: 1.3rem
+    cursor: pointer
 
     .t-purple
       color: $purple-color
@@ -59,7 +60,10 @@ export default {
         
       a 
         margin-left: 30px
-        text-decoration: none        
+        text-decoration: none
+
+        @include media-xs()
+          margin-left: 10px      
 
         svg
 

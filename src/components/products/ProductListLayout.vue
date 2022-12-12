@@ -71,6 +71,7 @@ export default {
 @import "@/assets/sass/mixins.sass"
 
 .product-list
+  margin-bottom: 2%
   width: 100%
   min-height: 100%
   @include display-direction-justify-align($dir: column, $ali: center) 

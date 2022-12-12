@@ -91,11 +91,19 @@ export default {
 @import "@/assets/sass/variables.sass"
 @import "@/assets/sass/mixins.sass"
 
-.cart
-  margin-top: 5%
+.cart  
   width: 100%
   min-height: 80%
-  @include display-direction-justify-align($dir: column, $ali: center) 
+  @include display-direction-justify-align($dir: column, $ali: center, $jus: center)
+
+  @include media-md()
+    padding-top: 2%   
+
+  @include media-lg()
+    padding-top: 2% 
+
+  @include media-xl()
+    padding-top: 2%
   
   .cart-table
     width: 100%

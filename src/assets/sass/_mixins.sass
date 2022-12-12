@@ -4,6 +4,8 @@
   justify-content: $jus
   align-items: $ali
 
+// Bootstrap breakpoints media queries
+
 @mixin media-xl()
   @media only screen and (min-width: 1200px)
     @content
@@ -23,6 +25,8 @@
 @mixin media-xs()
   @media only screen and (min-width: 1px) and (max-width: 575px)
     @content
+
+// Cart table media queries
 
 @mixin media-extra-small-table
   @media only screen and (max-width: 329px)

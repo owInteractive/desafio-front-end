@@ -20,7 +20,7 @@ export default {
 
 .home
   width: 100%
-  height: 80%
+  min-height: 80%
   @include display-direction-justify-align($dir: column)   
 
 </style>
