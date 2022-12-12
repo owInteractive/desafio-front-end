@@ -185,6 +185,9 @@ export default {
         color: $dark-color
         font-family: 'SourceSansBold', "sans-serif"
 
+        &:hover
+          background-color: $grey-shadow-color
+          
     .cart-actions-buy
       padding: 0 0 0 1%
       @include display-direction-justify-align($jus: center, $ali: center)      
@@ -196,6 +199,9 @@ export default {
         background-color: $purple-color
         color: $light-color
         font-family: 'SourceSansBold', "sans-serif"
+
+        &:hover
+          background-color: $purple-light-color
 
     .cart-actions-buymore, .cart-actions-buy
       @include media-md()

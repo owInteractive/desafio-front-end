@@ -266,7 +266,7 @@ export default {
 
           button            
             width: 100%
-            padding: 8px 0
+            padding: 4%
             background-color: $purple-color      
             color: $light-color
             font-family: 'SourceSansBold', "sans-serif"
