@@ -39,9 +39,7 @@ export default {
       await this.$http.listProduct()
       .then(response => {
         this.products = response.data
-        this.originalProducts = response.data
-        console.log(this.products)
-        console.log(this.originalProducts)
+        this.originalProducts = response.data       
       })
       .catch(error => {
         console.log(error)
