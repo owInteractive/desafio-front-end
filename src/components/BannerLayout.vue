@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <carousel :per-page="1" :mouse-drag="false" paginationActiveColor='purple'>
+    <carousel :per-page="1" :mouse-drag="false" :autoplay="true" :autoplayTimeout="12000" :loop="true" easing="fade" paginationActiveColor='purple'>
       <slide class="banner-slide banner-slide-item-first">
         <div class="container banner-slide-items">
           <h1>Notebooks</h1>
