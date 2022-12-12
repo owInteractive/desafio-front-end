@@ -59,21 +59,21 @@
       </div>
     </div>  
     <div class="cart-actions row">
-      <div class="col-lg-3 cart-actions-clear">
+      <div class="col-sm-12 col-lg-3 cart-actions-clear">
         <span @click="() => clearBag()">
           <GarbageIcon /> Limpar carrinho
         </span>       
       </div>
-      <div class="col-lg-3 offset-lg-3 cart-actions-buymore">
+      <div class="col-sm-12 col-lg-3 offset-lg-3 cart-actions-buymore">
         <button @click="() => this.$router.push({ name: 'home' })">Continuar comprando</button>
       </div>
-      <div class="col-lg-3 cart-actions-buy">
+      <div class="col-sm-12 col-lg-3 cart-actions-buy">
         <button @click="() => this.$router.push({ name: 'checkout' })">Concluir compra</button>
       </div>
     </div>  
   </div> 
   <div v-else class="cart-empty container-fluid">
-    <div class="cart-empty row">
+    <div class="cart-empty-item row">
       <div class="col-lg-4 offset-lg-4">
         <p>Seu carrinho está vazio</p>
         <router-link to="/">Voltar para home</router-link>
@@ -133,11 +133,17 @@ export default {
 
     .cart-table-item
       width: 100%     
-      @include display-direction-justify-align($dir: column) 
+      @include display-direction-justify-align($dir: column)
 
+      @include media-medium-table()
+        display: inline
+      
       .cart-table-item-header
         width: 100%
         border-bottom: 1px solid $dark-color
+
+        @include media-medium-table()
+          display: none
 
         tr
           width: 100%         
@@ -152,46 +158,84 @@ export default {
           th:first-child
             width: 4%
 
-          th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5)
-            width: 24%
-         
+          th:nth-child(3)
+            width: 12%
+
+          th:nth-child(2), th:nth-child(4), th:nth-child(5)
+            width: 28%
+        
       .cart-table-item-body       
         width: 100%
         border-bottom: 1px solid $dark-color        
-        @include display-direction-justify-align($dir: column)  
-        
+        @include display-direction-justify-align($dir: column)
+
+        @include media-medium-table()
+          border-bottom: none
+          @include display-direction-justify-align($dir: row, $jus: space-around)
+          flex-wrap: wrap
+                
         tr
           padding-top: 2% 
           padding-bottom: 2%
           width: 100%
           display: flex
-          border-bottom: 1px solid $dark-color       
+          border-bottom: 1px solid $dark-color 
 
-          td
-            width: 25%           
-            display: flex            
-          
-          td:first-child
-            width: 4%
+          @include media-medium-table()
+            margin-top: 2%
+            padding: 4% 0
+            width: 48%
+            box-shadow: 0 0 20px $grey-shadow-color
+            border-bottom: none
+            @include display-direction-justify-align($dir: column, $ali: center)
 
-          td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5)
-            width: 24%           
+          @include media-small-table()
+            width: 100%    
+
+          @include media-default-table()          
+            td
+              width: 25%           
+              display: flex               
+            
+            td:first-child
+              width: 4%           
+
+            td:nth-child(3)
+              width: 12%          
+
+            td:nth-child(2), td:nth-child(4), td:nth-child(5)
+              width: 28%
+
+            td:nth-child(4), td:nth-child(5)
+              white-space: nowrap  
           
           .cart-table-item-body-tr-description
             @include display-direction-justify-align($dir: column)
+
+            @include media-medium-table()
+              @include display-direction-justify-align($dir: column, $ali: center)
             
             span
               font-family: 'SourceSansBold', "sans-serif"
-
+              
             span:first-child
               color: $purple-color
-              font-size: 0.9rem  
+              font-size: 0.9rem
+
+              @include media-extra-small-table
+                font-size: 0.7rem
 
             span:last-child
               font-size: 1.1rem
 
+              @include media-extra-small-table
+                font-size: 0.8rem                   
+
           .cart-table-item-body-tr-quantity            
             @include display-direction-justify-align($ali: center)
+            
+            @include media-medium-table()
+              margin: 4% 0
 
             span
             cursor: pointer
@@ -214,11 +258,21 @@ export default {
 
           .cart-table-item-body-tr-value, .cart-table-item-body-tr-total, .cart-table-item-body-tr-garbage
             @include display-direction-justify-align($ali: center)
-           
+
+            @include media-medium-table()
+              display: inline
+
+            @include media-extra-small-table
+              font-size: 0.8rem
+          
             .value-description              
-              font-family: 'SourceSansBold', "sans-serif"
+              font-family: 'SourceSansBold', "sans-serif"             
 
           .cart-table-item-body-tr-garbage
+
+            @include media-medium-table()
+              margin-top: 3%
+              order: 5
             
             span
               cursor: pointer
@@ -226,6 +280,13 @@ export default {
               svg
                 width: 22px 
                 height: 22px
+
+                @include media-medium-table()
+                  width: 30px 
+                  height: 30px               
+        
+        tr:last-child
+          border-bottom: none
 
   .cart-total
     width: 100%
@@ -259,7 +320,7 @@ export default {
     .cart-instalment-description
       right: 0
       @include display-direction-justify-align($jus: flex-end, $ali: center)
-           
+          
       .cart-instalment-description-text
         font-family: 'SourceSansBold', "sans-serif"   
         text-transform: uppercase
@@ -302,7 +363,7 @@ export default {
 
     .cart-actions-buy
       padding: 0 0 0 1%
-      @include display-direction-justify-align($jus: center, $ali: center)
+      @include display-direction-justify-align($jus: center, $ali: center)      
       
       button
         padding: 5%
@@ -312,11 +373,24 @@ export default {
         color: $light-color
         font-family: 'SourceSansBold', "sans-serif"
 
+    .cart-actions-buymore, .cart-actions-buy
+      @include media-md()
+        padding: 0
+        margin-top: 2%
+
+      @include media-sm()
+        padding: 0
+        margin-top: 2%  
+
+      @include media-xs()
+        padding: 0
+        margin-top: 2%    
+
 .cart-empty    
   width: 100%
   min-height: 80%
   @include display-direction-justify-align($jus: center, $ali: center)
- 
+
   .cart-empty-item
     width: 100%
     text-align: center

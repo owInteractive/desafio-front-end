@@ -23,3 +23,19 @@
 @mixin media-xs()
   @media only screen and (min-width: 1px) and (max-width: 575px)
     @content
+
+@mixin media-extra-small-table
+  @media only screen and (max-width: 329px)
+    @content
+
+@mixin media-small-table
+  @media only screen and (max-width: 767px)
+    @content
+
+@mixin media-medium-table
+  @media only screen and (max-width: 1024px)
+    @content
+
+@mixin media-default-table
+  @media only screen and (min-width: 1025px)
+    @content
