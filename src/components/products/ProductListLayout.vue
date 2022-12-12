@@ -1,8 +1,8 @@
 <template>
   <div class="container product-list">
     <div class="product-list-item-search row">
-        <p class="product-list-item-search-label col-5 col-sm-3 offset-lg-1">Encontre seu produto</p>
-        <div class="product-list-item-search-field col-7 col-sm-8">
+        <p class="product-list-item-search-label col-5 col-sm-4 col-md-4 col-lg-3 offset-lg-1">Encontre seu produto</p>
+        <div class="product-list-item-search-field col-7 col-sm-8 col-md-8 col-lg-8 ">
           <input type="text" placeholder="Pesquisar..." v-model="searchField" />
           <button @click="() => searchProduct()">
             <SearchIcon />
@@ -89,7 +89,13 @@ export default {
     .product-list-item-search-label          
       margin: 0
       font-family: 'SourceSansBold', "sans-serif"
-      color: $grey-light-color 
+      color: $grey-light-color
+
+      @include media-xs()
+        font-size: 0.8rem
+
+      @include media-sm()
+        font-size: 0.8rem
 
     .product-list-item-search-field     
       height: 100%
@@ -101,7 +107,7 @@ export default {
 
       button
         margin-left: -1px      
-        padding: 0.5%
+        padding: 0.45%
         background-color: $purple-color               
         cursor: pointer    
 
