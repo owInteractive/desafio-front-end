@@ -1,0 +1,122 @@
+.checkout-form {
+    display: grid;
+    @media screen and (max-width: 819px) {
+        margin-top: 30px;
+    }
+    @media screen and(min-width: 820px) {
+        gap: 20px;
+        grid-template-columns: repeat(2,1fr);
+        margin: 120px 0;
+    }
+
+    &__cols {
+        width: 100%;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        @media screen and (max-width: 819px) {
+            margin-bottom: 15px;
+        }
+        @media screen and(min-width: 820px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__divide {
+        display: grid;
+        width: 100%;
+        @media screen and(max-width: 819px) {
+            grid-template-columns: 1fr;
+        }
+        @media screen and(min-width: 820px) {
+            gap: 20px;
+        }
+
+        &.-half-to-half {
+            @media screen and(min-width: 820px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        &.-one-eight {
+            @media screen and(min-width: 820px) {
+                grid-template-columns: 1fr auto;
+            }
+        }
+    }
+
+    &__label {
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+        color: $bg-secundary;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $bg-secundary;
+        color: $bg-secundary;
+
+        &.placeholder {
+            font-family: $main-font;
+            font-weight: 400;
+            color: #cfcfcf;
+            opacity: 1;
+        }
+        &:-moz-placeholder {
+            font-family: $main-font;
+            font-weight: 400;
+            color: #cfcfcf;
+            opacity: 1;
+        }
+        &::-moz-placeholder {
+            font-family: $main-font;
+            font-weight: 400;
+            color: #cfcfcf;
+            opacity: 1;
+        }
+        &::-webkit-input-placeholder {
+            font-family: $main-font;
+            font-weight: 400;
+            color: #cfcfcf;
+            opacity: 1;
+        }
+    }
+
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 54px;
+        font-size: 1.8rem;
+        color: $light-main;
+        background-color: $main-color;
+        border: none;
+        border-radius: 5px;        
+        transition: background-color 0.7s, color 0.7s ease-in-out;
+        will-change: background-color, color;
+
+        &:hover {
+            background-color: darken($main-color, 30);
+        }
+
+        @media screen and (max-width: 767px) {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 768px) {
+            width: 360px;
+            margin-left: auto;
+        }
+    }
+
+    &__invalid-field {
+        margin-top: 5px;
+        font-size: 1.4rem;
+        color: #ed1c24;
+    }
+}
