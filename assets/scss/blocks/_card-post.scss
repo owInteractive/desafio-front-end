@@ -1,0 +1,84 @@
+.card-post {
+    display: inline-block;
+    padding: 0 15px;
+    @media screen and (max-width: 1023px) {
+		margin-top: 54px;
+	}
+	@media screen and (min-width: 1024px) {
+		margin-top: 84px;
+	}
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 0 6px rgba(0, 0, 0, .19);
+        transition: box-shadow 0.3s ease-in-out;;
+        will-change: box-shadow;
+
+        .card-post:hover & {
+            box-shadow: 0 0 16px rgba(0, 0, 0, .3);
+        }
+    }
+
+    &__figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        &.-silver {
+            background-color: #ccc;
+            min-height: 180px;
+            img {
+                width: 170px;
+            }
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        color: #909090;
+    }
+
+    &__categ {
+        color: $main-color;
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+
+    &__title {
+        margin: 10px 0;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    &__price {
+        margin-top: 10px;
+        font-size: 2.5rem;
+        color: #434343;
+    }
+
+    &__link{
+        display: inline-block;
+        padding: 15px 10px;
+        background-color: $light-main;
+        color: $main-color;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        border-top: 1px solid #aaa;
+        transition: background-color 0.7s, color 0.7s ease-in-out;
+        will-change: background-color, color;
+        &:hover {
+            border-top-color: $main-color;
+            background-color: $main-color;
+            color: $light-main;
+        }
+    }
+
+
+}

@@ -1,0 +1,29 @@
+//Reset
+@import 'reset/_imports';
+@import 'reset/_variables';
+@import 'reset/_normalize';
+@import 'reset/_grid';
+
+//Elements
+@import 'elements/_content';
+
+//Header
+@import 'header/_header';
+@import 'header/_nav-mobile';
+
+//Pages
+@import 'pages/_home';
+
+// Agrupa todos os blocos do projeto
+@import 'blocks/_page-section';
+@import 'blocks/_slick-dots';
+@import 'blocks/_posts-list';
+@import 'blocks/_form-search';
+@import 'blocks/_card-post';
+@import 'blocks/_card-list';
+@import 'blocks/_empty-carty';
+@import 'blocks/_checkout-form';
+@import 'blocks/_modal';
+
+//Footer
+@import 'footer/_footer';
