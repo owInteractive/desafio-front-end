@@ -17,11 +17,7 @@ Fazemos parte do universo digital, focada em criar e desenvolver experiências i
 
 ## Desafio
 
-Opção em PSD
-Faça o download do arquivo [clique aqui para baixar](https://www.dropbox.com/sh/x5wupfno5yqvmts/AADzmcp3hYuWbKYwqDYmmvCqa?dl=0) e após o download terminado siga as etapas listadas abaixo:
-
-Opção no Figma
-https://www.figma.com/file/DMHwHWENaL8TxE7M7G59ty/Desafio---Front?node-id=0%3A1&t=Wl8vNoAuyLiY4QKS-1
+Faça o download do arquivo PSD ou Figma [clique aqui para baixar](https://www.dropbox.com/sh/x5wupfno5yqvmts/AADzmcp3hYuWbKYwqDYmmvCqa?dl=0) e após o download terminado siga as etapas listadas abaixo:
 
 ### Etapa 1
 
